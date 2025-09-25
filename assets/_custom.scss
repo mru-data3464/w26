@@ -1,0 +1,91 @@
+.book-footer{
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 10px;
+}
+
+// img[alt~="bg"] {
+//     display: none;
+//     }
+
+img[alt*="right"] {
+  float: right;
+  margin-left: 2em;
+}
+
+img[alt*="left"] {
+  float: left;
+  margin-right: 2em;
+}
+
+img[alt~="bg"] {
+  max-height: 15em;
+}
+
+h1, h2 {
+  clear: both;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 1rem;
+  align-items: center;
+}
+
+.centred {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img[alt*="emoji"] {
+  height: 1em;
+  width: 1em;
+  margin: 0 .05em 0 .1em;
+}
+
+.fullgrid table {
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.fullgrid td,
+.fullgrid th {
+  min-width: 0px !important;
+  border: solid black 1px !important;
+  font-family: monospace;
+}
+
+.plaingrid table {
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.plaingrid td,
+.plaingrid th {
+  min-width: 1.5em !important;
+  border: solid black 1px !important;
+  font-weight: normal;
+  font-family: monospace;
+  background-color: white;
+  text-align: center;
+}
+
+.Alpha ol {
+  list-style: upper-alpha;
+}
+
+.alpha ol {
+  list-style: lower-alpha;
+}
+
+@media screen and (max-width: 760px) {
+  img[alt~="flavour"] {
+    display: none;
+  }
+  .columns {
+    display: block;
+  }
+}
