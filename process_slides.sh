@@ -12,6 +12,7 @@ for doc in content/lecture/*.md; do
         rm $doc
     else
         sed -i 's!{{%.*%}}!!g' $doc
+        sed -r 's/> \[\!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]//g' -i $doc
     fi
 done
 
