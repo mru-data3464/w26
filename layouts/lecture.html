@@ -1,9 +1,22 @@
 {{ define "main" }}
-<h1>Lecture {{ .Params.title }}</h1>
-<p style="margin-bottom: 2em;">
-    <a href="/slides/{{ .File.BaseFileName }}.html ">HTML Slides <img height="50" src="https://raw.githubusercontent.com/marp-team/marp-cli/main/src/assets/osc-presenter.svg" alt="html" style="background-color: black; margin: 0; height: 20px;"></a>&nbsp;│&nbsp;<a href="/slides/{{ .File.BaseFileName }}.pdf ">PDF Slides <img src="/img/file-type-pdf.svg" alt="PDF" style="height: 20px; margin: 0;"/></a>
-</p>
-  <article class="markdown book-article">
-    {{ replace .Content "../../static" "" | safeHTML }}
-  </article>
+<article class="markdown book-article">
+  <h1>Lecture {{ .Params.title }}</h1>
+  <p style="margin-bottom: 2em">
+    <a href="/slides/{{ .File.BaseFileName }}.html "
+      >HTML Slides
+      <img
+        height="50"
+        src="https://raw.githubusercontent.com/marp-team/marp-cli/main/src/assets/osc-presenter.svg"
+        alt="html"
+        style="background-color: black; margin: 0; height: 20px" /></a
+    >&nbsp;│&nbsp;<a href="/slides/{{ .File.BaseFileName }}.pdf "
+      >PDF Slides
+      <img
+        src="/img/file-type-pdf.svg"
+        alt="PDF"
+        style="height: 20px; margin: 0"
+    /></a>
+  </p>
+  {{ replace .Content "../../static" "" | safeHTML }}
+</article>
 {{ end }}
