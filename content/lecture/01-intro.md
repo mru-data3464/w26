@@ -59,11 +59,38 @@ January 6, 2026
 Bonus marks may be awarded for *substantial* corrections to materials, submitted as pull requests
 
 </div>
-<br/>
 
 **Course materials repo**: https://github.com/mru-data3464/w26
 
 ## Textbook(s)
-![bg right 50%](https://images.routledge.com/common/jackets/amazon/978103209/9781032090856.jpg)
+![bg right:40% 50%](https://images.routledge.com/common/jackets/amazon/978103209/9781032090856.jpg)
 
-Open source resource: http://www.feat.engineering/
+Open source resources: 
+- http://www.feat.engineering/
+- All the documentation!
+    - [Pandas](https://pandas.pydata.org/docs/)
+    - [Numpy](https://numpy.org/doc/stable/)
+    - [SciPy](https://scipy.github.io/devdocs/)
+    - [Matplotlib](https://matplotlib.org/stable/users/index.html)
+- ... or the [R tidyverse](https://tidyverse.org/)
+
+> [!TIP]
+> Don't just rely on AI summaries!
+
+## Core courses so far
+<div style="background: white;">
+
+![flowchart](../../static/img/01-program.svg)
+
+</div>
+
+## What do you know so far?
+* Various probability distributions
+* Linear and logistic regression
+* Data quality measures
+* Document parsing, web scraping, audio/video feature detection
+* Linear algebra and array programming
+* Prediction tasks: classification and regression
+* Clustering and anomaly detection
+* Evaluation metrics
+* Basic data visualization (scatter plots, histograms, etc)

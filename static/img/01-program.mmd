@@ -1,0 +1,24 @@
+---
+config:
+  theme: 'base'
+  themeVariables:
+    primaryColor: '#ECECFF'
+    fontFamily: monospace
+---
+
+flowchart TD
+    COMP1701[COMP 1701] --> DATA2721[DATA 2721]
+    COMP1701 --> DATA2402[DATA 2402]
+    DATA2402 --> DATA3463[DATA 3463]
+    DATA2721 --> DATA3463
+    DATA2402 --> DATA3453[DATA 3453]:::maybeNow
+    DATA2402 --> DATA3464[DATA 3464]
+    MATH1200[MATH 1200] --> MATH2234[MATH 2234]
+    MATH2234 --> MATH2444[MATH 2444]
+    MATH2234 --> MATH2071[MATH 2071]
+    MATH2444 --> DATA3464
+    MATH2444 --> MATH3454[MATH 3454]:::maybeNow
+    MATH1203[MATH 1203] --> MATH2071
+    MATH1203 --> MATH2303[MATH 2303]
+    classDef maybeNow stroke-width: 2pt, stroke-dasharray: 5 5;
+    style DATA3464 fill: aqua
