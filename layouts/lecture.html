@@ -1,5 +1,5 @@
 {{ define "main" }}
-<article class="markdown book-article">
+  <article class="markdown book-article">
   <h1>Lecture {{ .Params.title }}</h1>
   <p style="margin-bottom: 2em">
     <a href="/slides/{{ .File.BaseFileName }}.html "
@@ -17,6 +17,6 @@
         style="height: 20px; margin: 0"
     /></a>
   </p>
-  {{ replace .Content "../../static" "" | safeHTML }}
-</article>
+    {{- replace .Content "../../static" "" | safeHTML -}}
+  </article>
 {{ end }}

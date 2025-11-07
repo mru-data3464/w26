@@ -1,5 +1,5 @@
-module github.com/repo/path
+module github.com/mru-data3464/w26
 
-go 1.24.7
+go 1.24.8
 
-require github.com/alex-shpak/hugo-book v0.0.0-20250925150811-fe67dfeed1be // indirect
+require github.com/alex-shpak/hugo-book v0.0.0-20251019220708-2687e34ac095 // indirect
