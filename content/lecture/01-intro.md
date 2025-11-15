@@ -60,7 +60,9 @@ Bonus marks may be awarded for *substantial* corrections to materials, submitted
 
 </div>
 
-**Course materials repo**: https://github.com/mru-data3464/w26
+**Source repo**: https://github.com/mru-data3464/w26
+
+**Rendered at**: https://mru-data3464.github.io/w26
 
 ## Textbook(s)
 ![bg right:40% 50%](https://images.routledge.com/common/jackets/amazon/978103209/9781032090856.jpg)
@@ -77,6 +79,31 @@ Open source resources:
 > [!TIP]
 > Don't just rely on AI summaries!
 
+## The "plan" - before Reading Week
+
+| Week | Topic                                  | Chapter (ish) |
+| ---- | -------------------------------------- | ------------- |
+| 1    | Review and planning                    | 1-2           |
+| 2    | Exploring data, sampling, splitting    | 3-4           |
+| 3    | Representing categorical data          | 5             |
+| 4    | Numeric transformations, too much data | 6             |
+| 5    | Dealing with missing values            | 7-8           |
+| 6    | Feature selection                      | 10            |
+
+
+## The "plan" - after Reading Week
+
+| Week | Topic                                | Resources     |
+| ---- | ------------------------------------ | ------------- |
+| 7    | Midterm                              |               |
+| 8    | Extracting data from text            |               |
+| 9    | Image representation and processing  |               |
+| 10   | Data labelling and augmentation      |               |
+| 11   | Processing pipelines                 |               |
+| 12   | Supervised and unsupervised learning |               |
+| 13   | Buffer                               |               |
+
+
 ## Core courses so far
 <div style="background: white;">
 
@@ -84,13 +111,45 @@ Open source resources:
 
 </div>
 
-## What do you know so far?
+## What do you know about...
 * Various probability distributions
 * Linear and logistic regression
 * Data quality measures
+* Data stewardship best practices
 * Document parsing, web scraping, audio/video feature detection
 * Linear algebra and array programming
 * Prediction tasks: classification and regression
 * Clustering and anomaly detection
 * Evaluation metrics
 * Basic data visualization (scatter plots, histograms, etc)
+
+## What do you want to know about?
+
+<div class="columns" style="font-size: 0.9em">
+<div>
+
+### Examples of Subject Matter
+- Finance
+- Real estate
+- Transportation
+- Climate
+- Politics
+- Biology
+- Chemistry
+- Malware
+
+</div>
+<div>
+
+### Examples of Data types
+- Unstructured text
+- Structured text (e.g. csv, HTML)
+- PDF
+- Word documents
+- Images
+- Audio
+- Video
+
+</div>
+</div>
+
