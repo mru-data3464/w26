@@ -10,3 +10,10 @@
 *.fdb_latexmk
 *.fls
 *.synctex.gz
+
+# Python stuff
+venv
+__pycache__/
+*.pyc
+*.pyo
+*.pyd

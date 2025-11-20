@@ -2,7 +2,6 @@ languageCode = 'en-ca'
 title = 'DATA 3464'
 # enableGitInfo = true
 copyright = "© Charlotte Curtis 2026 | Created using <a href='https://github.com/alex-shpak/hugo-book'>Hugo Book Theme</a>" 
-
 enableEmoji = true
 
 [module]

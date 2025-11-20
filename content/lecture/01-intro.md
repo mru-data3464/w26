@@ -7,6 +7,7 @@ paginate: true
 headingDivider: 2
 math: true
 layout: lecture
+code: 01_stroke
 ---
 
 <!-- 
@@ -153,3 +154,25 @@ Open source resources:
 </div>
 </div>
 
+## Case study: Risk of Ischemic Stroke
+
+<div class="columns">
+<div style="font-size:0.95em">
+
+![](../../static/img/stroke-vascuCAPpic-1.svg)
+
+Chapter 2: http://www.feat.engineering/stroke-tour
+
+</div>
+<div>
+
+* Arterial stenosis can predict risk
+* Plaque composition plays a role
+* Features extracted from CT images
+* Other risk factors (demographics, lifestyle) added to dataset
+
+
+</div>
+</div>
+
+## Load and set aside test data
