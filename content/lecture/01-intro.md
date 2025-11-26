@@ -1,6 +1,6 @@
 ---
-title: "01: Introduction"
-date: 2025-09-25T14:02:38-06:00
+title: "Week 1: Introduction"
+date: 2026-01-06
 marp: true
 theme: marp-mru
 paginate: true
@@ -175,4 +175,4 @@ Chapter 2: http://www.feat.engineering/stroke-tour
 </div>
 </div>
 
-## Load and set aside test data
+## From data to prediction
