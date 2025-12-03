@@ -119,3 +119,7 @@ section {
 section.title_slide {
   justify-content: center;
 }
+
+section.code_reminder::after {
+  content: "📝 " attr(data-marpit-pagination);
+}

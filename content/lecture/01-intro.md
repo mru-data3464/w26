@@ -70,6 +70,7 @@ Bonus marks may be awarded for *substantial* corrections to materials, submitted
 
 Open source resources: 
 - http://www.feat.engineering/
+- Additional texts/websites as needed
 - All the documentation!
     - [Pandas](https://pandas.pydata.org/docs/)
     - [Numpy](https://numpy.org/doc/stable/)
@@ -154,7 +155,7 @@ Open source resources:
 </div>
 </div>
 
-## Case study: Risk of Ischemic Stroke
+## Case study: risk of ischemic stroke
 
 <div class="columns">
 <div style="font-size:0.95em">
@@ -171,8 +172,24 @@ Chapter 2: http://www.feat.engineering/stroke-tour
 * Features extracted from CT images
 * Other risk factors (demographics, lifestyle) added to dataset
 
-
 </div>
 </div>
 
 ## From data to prediction
+
+<!-- 
+_class: code_reminder
+-->
+
+1) Understand the problem and define the task
+2) Collect, anonymize and organize the data
+3) Extract features
+4) Explore the dataset
+5) Select a model
+6) Prepare the data for the model
+7) Train the model
+8) Evaluate, fine-tune, iterate
+9) Deploy and maintain your system
+
+<footer>Adapted from Aurélien Géron's <a href="https://github.com/ageron/handson-mlp/blob/main/ml-project-checklist.md">ML Project Checklist</a></footer>
+
