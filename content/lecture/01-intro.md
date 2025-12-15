@@ -53,9 +53,9 @@ January 6, 2026
 | Component          | Weight  |
 | ------------------ | ------- |
 | Tutorial exercises | 10%     |
-| Assignments        | 3 x 10% |
+| Assignments        | 30%     |
 | Midterm exam       | 25%     |
-| Final project      | 35%     |
+| Final exam         | 35%     |
 
 Bonus marks may be awarded for *substantial* corrections to materials, submitted as pull requests
 
@@ -68,7 +68,6 @@ Bonus marks may be awarded for *substantial* corrections to materials, submitted
 ## Textbook(s)
 ![bg right:40% 50%](https://images.routledge.com/common/jackets/amazon/978103209/9781032090856.jpg)
 
-Open source resources: 
 - http://www.feat.engineering/
 - Additional texts/websites as needed
 - All the documentation!
@@ -80,6 +79,20 @@ Open source resources:
 
 > [!TIP]
 > Don't just rely on AI summaries!
+
+## Speaking of AI...
+In this course (and others, and your career), you will need to know:
+- **What** to do, and **why**
+- **How** to do it
+
+(also when and who) 
+
+<div data-marpit-fragment>
+
+> [!NOTE]
+> Which of these things seem appropriate for AI assistance?
+
+</div>
 
 ## The "plan" - before Reading Week
 
@@ -95,15 +108,15 @@ Open source resources:
 
 ## The "plan" - after Reading Week
 
-| Week | Topic                                | Resources     |
-| ---- | ------------------------------------ | ------------- |
-| 7    | Midterm                              |               |
-| 8    | Extracting data from text            |               |
-| 9    | Image representation and processing  |               |
-| 10   | Data labelling and augmentation      |               |
-| 11   | Processing pipelines                 |               |
-| 12   | Supervised and unsupervised learning |               |
-| 13   | Buffer                               |               |
+| Week | Topic                                |
+| ---- | ------------------------------------ |
+| 7    | Midterm                              |
+| 8    | Extracting data from text            |
+| 9    | Image representation and processing  |
+| 10   | Data labelling and augmentation      |
+| 11   | Processing pipelines                 |
+| 12   | Supervised and unsupervised learning |
+| 13   | Project presentations, buffer time   |
 
 
 ## Core courses so far
@@ -181,15 +194,22 @@ Chapter 2: http://www.feat.engineering/stroke-tour
 _class: code_reminder
 -->
 
-1) Understand the problem and define the task
-2) Collect, anonymize and organize the data
-3) Extract features
-4) Explore the dataset
-5) Select a model
-6) Prepare the data for the model
-7) Train the model
-8) Evaluate, fine-tune, iterate
-9) Deploy and maintain your system
+1. Understand the problem and define the task
+2. Collect, anonymize and organize the data
+3. Extract features
+4. Explore the dataset
+5. Select a model and preprocess
+6. Train the model
+7. Evaluate, fine-tune, iterate
+8. Deploy and maintain your system
 
 <footer>Adapted from Aurélien Géron's <a href="https://github.com/ageron/handson-mlp/blob/main/ml-project-checklist.md">ML Project Checklist</a></footer>
 
+<!-- 
+Note: these might be better at a later date
+
+## Discussion questions
+* When (and why) should we reserve a test set?
+* Why are random number seeds useful?
+* What is stratified sampling, and when should it be used?
+* What does it mean for features to be correlated? -->

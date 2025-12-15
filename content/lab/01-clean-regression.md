@@ -1,5 +1,5 @@
 ---
-title: "01: Regression with Clean Data"
+title: "Week 1: Regression with Clean Data"
 # weight: 1
 # bookFlatSection: false
 bookToc: true
@@ -10,7 +10,7 @@ bookToc: true
 # bookHref: ''
 ---
 
-# Lab 01: Regression with Clean Data
+# Lab 1: Regression with Clean Data
 Due date: January 19, 2026 (next lab session)
 
 ## Objective
