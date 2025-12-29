@@ -94,11 +94,11 @@ In this course (and others, and your career), you will need to know:
 
 </div>
 
-## The "plan" - before Reading Week
+## The plan - before Reading Week
 
 | Week | Topic                                  | Chapter (ish) |
 | ---- | -------------------------------------- | ------------- |
-| 1    | Review and planning                    | 1-2           |
+| 1    | Review and overview                    | 1-2           |
 | 2    | Exploring data, sampling, splitting    | 3-4           |
 | 3    | Representing categorical data          | 5             |
 | 4    | Numeric transformations, too much data | 6             |
@@ -106,7 +106,7 @@ In this course (and others, and your career), you will need to know:
 | 6    | Feature selection                      | 10            |
 
 
-## The "plan" - after Reading Week
+## The plan - after Reading Week
 
 | Week | Topic                                |
 | ---- | ------------------------------------ |
@@ -188,11 +188,10 @@ Chapter 2: http://www.feat.engineering/stroke-tour
 </div>
 </div>
 
-## From data to prediction
+>[!NOTE]
+>Many decisions in the data analysis process are subjective - I will often make different decisions than the textbook
 
-<!-- 
-_class: code_reminder
--->
+## From data to prediction
 
 1. Understand the problem and define the task
 2. Collect, anonymize and organize the data
@@ -213,3 +212,34 @@ Note: these might be better at a later date
 * Why are random number seeds useful?
 * What is stratified sampling, and when should it be used?
 * What does it mean for features to be correlated? -->
+
+
+## Applied to the stroke example
+1. What is the problem? What do we need to do?
+2. (Collect, anonymize and organize the data) - Done for us
+3. (Extract features) - Done for us
+4. **Explore the dataset**
+    - A critically important component, DO NOT OFFLOAD TO AI
+    - This can even be where the data sciencing stops and we jump straight to visualizations and communicating insights!
+    - Check out [Data for Good case studies](https://dataforgood.ca/case-studies/)
+
+
+## <!--fit--> 5. Select a model and preprocess
+![center h:500px](../../static/img/01-ml_map.svg)
+
+<footer>Source: <a href="https://scikit-learn.org/stable/machine_learning_map.html">scikit-learn documentation</a></footer>
+
+<!-- 
+_class: code_reminder
+-->
+
+## 7. Evaluate, fine-tune, and iterate
+- In my example, I jumped straight to testing on the held-back test set
+- This is a terrible idea! We have no confidence that the model actually worked. We could be:
+    - overfitting to the training data
+    - making incorrect assumptions about the data
+    - applying inappropriate transformations, or missing some
+    - using the wrong model altogether
+
+> [!IMPORTANT]
+> Validation needs to happen before the final testing

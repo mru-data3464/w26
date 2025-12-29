@@ -1,5 +1,6 @@
 ---
-title: "Week 1: Regression with Clean Data"
+title: "Lab 1: Regression with Clean Data"
+date: 2026-01-12
 # weight: 1
 # bookFlatSection: false
 bookToc: true
