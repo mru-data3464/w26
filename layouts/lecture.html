@@ -2,17 +2,17 @@
 <article class="markdown book-article">
   <h1>Lecture {{ .Params.title }}</h1>
   <p style="margin-bottom: 2em">
-    <a href="/slides/{{ .File.BaseFileName }}.html "
+    <a href="{{ .Site.BaseURL }}/slides/{{ .File.BaseFileName }}.html "
       >HTML Slides
       <img
         height="50"
         src="https://raw.githubusercontent.com/marp-team/marp-cli/main/src/assets/osc-presenter.svg"
         alt="html"
         style="background-color: black; margin: 0; height: 20px" /></a
-    >&nbsp;│&nbsp;<a href="/slides/{{ .File.BaseFileName }}.pdf "
+    >&nbsp;│&nbsp;<a href="{{ .Site.BaseURL }}/slides/{{ .File.BaseFileName }}.pdf "
       >PDF Slides
       <img
-        src="/img/file-type-pdf.svg"
+        src="{{ .Site.BaseURL }}/img/file-type-pdf.svg"
         alt="PDF"
         style="height: 20px; margin: 0"
     /></a>
@@ -20,7 +20,7 @@
     &nbsp;│&nbsp;<a href="https://github.com/mru-data3464/w26/tree/main/demo_code/{{ .Params.code }}" target="_blank"
       >Demo code on GitHub
       <img
-        src="/img/github-mark-white.svg"
+        src="{{ .Site.BaseURL }}/img/github-mark-white.svg"
         alt="GitHub"
         style="height: 20px; margin: 0"
       /> 
