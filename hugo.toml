@@ -20,7 +20,7 @@ path = 'github.com/alex-shpak/hugo-book'
   startLevel = 2
 
 [[menu.after]]
-  pre = "<span style='margin-top:2em; margin-left:2em;'><img src='/img/github-mark-white.svg' style='height: 1.5em;'>&nbsp"
+  pre = "<span style='margin-top:2em; margin-left:2em;'><img src='/w26/img/github-mark-white.svg' style='height: 1.5em;'>&nbsp"
   post = "</span>"
   name = "GitHub Repo (issues etc)"
   url = "https://github.com/mru-data3464/w26"
