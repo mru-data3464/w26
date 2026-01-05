@@ -1,0 +1,28 @@
+name: Marp CI
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'content/lecture/*'
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v6
+      - name: Process Marp Slides
+        run: |
+          chmod +x process_slides.sh
+          ./process_slides.sh
+
+      - name: Publish to repo
+        run: |
+          git config --global user.name 'Charlotte Curtis'
+          git config --global user.email 'ccurtis@mtroyal.ca'
+          git add static/slides
+          git commit -m "Marp CI build output"
+          git push
