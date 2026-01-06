@@ -74,6 +74,7 @@ Bonus marks may be awarded for *substantial* corrections to materials, submitted
     - [Pandas](https://pandas.pydata.org/docs/)
     - [Numpy](https://numpy.org/doc/stable/)
     - [SciPy](https://scipy.github.io/devdocs/)
+    - [Scikit Learn](https://scikit-learn.org/stable/user_guide.html)
     - [Matplotlib](https://matplotlib.org/stable/users/index.html)
 - ... or the [R tidyverse](https://tidyverse.org/)
 
@@ -188,8 +189,8 @@ Chapter 2: http://www.feat.engineering/stroke-tour
 </div>
 </div>
 
->[!NOTE]
->Many decisions in the data analysis process are subjective - I will often make different decisions than the textbook
+> [!NOTE]
+> Many decisions in the data analysis process are subjective - I will often make different decisions than the textbook
 
 ## From data to prediction
 
