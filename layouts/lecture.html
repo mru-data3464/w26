@@ -27,6 +27,6 @@
     </a>
     {{ end }}
   </p>
-  {{- replace .Content "../../static" "" | safeHTML -}}
+  {{- replace .Content "../../static" .Site.BaseURL | safeHTML -}}
 </article>
 {{ end }}

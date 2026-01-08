@@ -5,7 +5,6 @@ marp: true
 theme: marp-mru
 paginate: true
 headingDivider: 2
-math: true
 layout: lecture
 code: 01_stroke
 ---
@@ -15,6 +14,7 @@ _class: title_slide
 _paginate: skip
 -->
 
+{{< katex />}}
 {{% ignore %}}
 
 # <!--fit-->DATA 3464: Fundamentals of Data Processing
@@ -74,6 +74,7 @@ Bonus marks may be awarded for *substantial* corrections to materials, submitted
     - [Pandas](https://pandas.pydata.org/docs/)
     - [Numpy](https://numpy.org/doc/stable/)
     - [SciPy](https://scipy.github.io/devdocs/)
+    - [Scikit Learn](https://scikit-learn.org/stable/user_guide.html)
     - [Matplotlib](https://matplotlib.org/stable/users/index.html)
 - ... or the [R tidyverse](https://tidyverse.org/)
 
@@ -127,16 +128,16 @@ In this course (and others, and your career), you will need to know:
 </div>
 
 ## What do you know about...
-* Various probability distributions
-* Linear and logistic regression
-* Data quality measures
-* Data stewardship best practices
-* Document parsing, web scraping, audio/video feature detection
-* Linear algebra and array programming
-* Prediction tasks: classification and regression
-* Clustering and anomaly detection
-* Evaluation metrics
-* Basic data visualization (scatter plots, histograms, etc)
+- Various probability distributions
+- Linear and logistic regression
+- Data quality measures
+- Data stewardship best practices
+- Document parsing, web scraping, audio/video feature detection
+- Linear algebra and array programming
+- Prediction tasks: classification and regression
+- Clustering and anomaly detection
+- Evaluation metrics
+- Basic data visualization (scatter plots, histograms, etc)
 
 ## What do you want to know about?
 
@@ -180,16 +181,16 @@ Chapter 2: http://www.feat.engineering/stroke-tour
 </div>
 <div>
 
-* Arterial stenosis can predict risk
-* Plaque composition plays a role
-* Features extracted from CT images
-* Other risk factors (demographics, lifestyle) added to dataset
+- Arterial stenosis can predict risk
+- Plaque composition plays a role
+- Features extracted from CT images
+- Other risk factors (demographics, lifestyle) added to dataset
 
 </div>
 </div>
 
->[!NOTE]
->Many decisions in the data analysis process are subjective - I will often make different decisions than the textbook
+> [!NOTE]
+> Many decisions in the data analysis process are subjective - I will often make different decisions than the textbook
 
 ## From data to prediction
 
@@ -208,10 +209,10 @@ Chapter 2: http://www.feat.engineering/stroke-tour
 Note: these might be better at a later date
 
 ## Discussion questions
-* When (and why) should we reserve a test set?
-* Why are random number seeds useful?
-* What is stratified sampling, and when should it be used?
-* What does it mean for features to be correlated? -->
+- When (and why) should we reserve a test set?
+- Why are random number seeds useful?
+- What is stratified sampling, and when should it be used?
+- What does it mean for features to be correlated? -->
 
 
 ## Applied to the stroke example
@@ -243,6 +244,50 @@ _class: code_reminder
 
 > [!IMPORTANT]
 > Validation needs to happen before the final testing
+
+## Terminology for evaluation (classification)
+- **True positive**: predicted positive, label was positive ($TP$) ✔️ 
+- **True negative**: predicted negative, label was negative ($TN$) ✔️
+- **False positive**: predicted positive, label was negative ($FP$) ❌ (type I)
+- **False negative**: predicted negative, label was positive ($FN$) ❌ (type II)
+- **Accuracy** is the fraction of correct predictions, given as:
+
+    $$\mathrm{accuracy} = \frac{TP + TN}{TP + TN + FP + FN}$$
+
+## Precision and recall
+- **Precision**: Out of all the positive **predictions**, how many were correct?
+  $$\mathrm{precision} = \frac{TP}{TP + FP}$$
+
+- **Recall**: Out of all the positive **labels**, how many were correct?
+  $$\mathrm{recall} = \frac{TP}{TP + FN}$$
+
+- **Specificity**: Out of all the negative **labels**, how many were correct?
+  $$\mathrm{specificity} = \frac{TN}{TN + FP}$$
+
+## Confusion matrix
+
+|                   | Predicted Positive | Predicted Negative |
+| ----------------- | ------------------ | ------------------ |
+| **True Positive** | TP                 | FN                 |
+| **True Negative** | FP                 | TN                 |
+
+- The axes might be reversed, but a good predictor will have strong diagonals
+- There's also the **F1 score**, or harmonic mean of precision and recall:
+    $$F1 = 2 \cdot \frac{\mathrm{precision} \cdot \mathrm{recall}}{\mathrm{precision} + \mathrm{recall}}$$
+
+<footer>Check out the <a href="https://en.wikipedia.org/wiki/Confusion_matrix">Wikipedia page</a> for more ways of describing the same information</footer>
+
+## ROC Curves
+- The [receiver operating characteristic](https://en.wikipedia.org/wiki/Receiver_operating_characteristic) curve is a plot of the **true positive rate** (recall or sensitivity) vs. **false positive rate** (1 - specificity) as the detection threshold changes
+
+- The diagonal is the same as random guessing
+- A perfect classifier would hug the top left corner
+
+<div>
+
+> Fun fact: the name comes from WWII radar operators, where true positives were airplanes and false positives were noise
+
+</div>
 
 ## Coming up next
 - Lab: basic regression, show me where you're at

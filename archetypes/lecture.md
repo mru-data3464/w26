@@ -7,7 +7,6 @@ paginate: true
 headingDivider: 2
 layout: lecture
 toc: true
-math: true
 ---
 
 <!-- 
@@ -15,6 +14,7 @@ _class: title_slide
 _paginate: skip
 -->
 
+{{< katex />}}
 {{% ignore %}}
 
 ## <!--fit-->DATA 3464: Fundamentals of Data Processing

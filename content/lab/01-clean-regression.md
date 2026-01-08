@@ -18,9 +18,9 @@ Due date: January 19, 2026 (next lab session)
 The main goal of this exercise is for me to learn about your current habits and knowledge. It also serves as an example for why we need "clean" and easy to manage data.
 
 ## Deliverables
-[Click here](#) to join the GitHub classroom and clone the "starter code". There's not much in here other than the data sets, so you'll need to add:
+[Click here](https://classroom.github.com/a/nfqoN057) to join the GitHub classroom and clone the "starter code". There's not much in here other than the data sets, so you'll need to add:
 - Your code to load, process, and visualize the data
-- A brief report in PDF format describing your process and answering a few questions
+- A brief report in PDF or Markdown format describing your process and answering a few questions
 - A list of references, such as:
     - Complete URLs, e.g. to library documentation or Stack Overflow answers
     - Search queries, particularly if you used the "AI overview" response
@@ -44,9 +44,9 @@ The main goal of this exercise is for me to learn about your current habits and 
     2. Do you have any guess what this dataset represents?
 
 ## Submission
-Submit your work by adding new files with `git add`, commit with `git commit`, and push your changes to GitHub with `git push`. You may `add/commit/push` as many times as you like; only the last revision will be "marked". Your repo should include:
-- Your source code in the language of your choice
-- A PDF report, including your scatter plots and responses to the questions
+Submit your work by adding new files with `git add`, commit with `git commit`, and push your changes to GitHub with `git push`. You may `add/commit/push` as many times as you like; only the last revision will be marked. Your repo should include:
+- Your source code in the language of your choice with a list of package dependencies to reproduce (e.g. `requirements.txt` for Python)
+- A PDF or Markdown report, including your scatter plots and responses to the questions
 - Your list of references and (if applicable) AI chat histories
 
 Labs are marked pass/fail on the basis of completion.
