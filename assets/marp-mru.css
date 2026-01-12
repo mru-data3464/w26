@@ -105,6 +105,18 @@ text-align: center;
   list-style: lower-alpha;
 }
 
+.pro li::marker {
+  content: "+ ";
+  color: green;
+  font-weight: bold;
+}
+
+.con li::marker {
+  content: "- ";
+  color: red;
+  font-weight: bold;
+}
+
 /* Add a border below the slide headers */
 h1, h2 {
   border-bottom: 1px solid #8aa6da;

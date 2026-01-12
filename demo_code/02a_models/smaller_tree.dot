@@ -1,0 +1,29 @@
+digraph Tree {
+node [shape=box, style="filled", color="black", fontname="helvetica"] ;
+edge [fontname="helvetica"] ;
+0 [label="MaxMaxWallThickness <= 4.091\nsamples = 94\nvalue = [45, 49]\nclass = No Stroke", fillcolor="#eff7fd"] ;
+1 [label="MaxLRNCArea <= 31.574\nsamples = 35\nvalue = [26, 9]\nclass = Stroke", fillcolor="#eead7e"] ;
+0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
+2 [label="MaxMaxWallThickness <= 1.752\nsamples = 32\nvalue = [26, 6]\nclass = Stroke", fillcolor="#eb9e67"] ;
+1 -> 2 ;
+3 [label="samples = 2\nvalue = [0, 2]\nclass = No Stroke", fillcolor="#399de5"] ;
+2 -> 3 ;
+4 [label="samples = 30\nvalue = [26, 4]\nclass = Stroke", fillcolor="#e99457"] ;
+2 -> 4 ;
+5 [label="samples = 3\nvalue = [0, 3]\nclass = No Stroke", fillcolor="#399de5"] ;
+1 -> 5 ;
+6 [label="MaxDilationByArea <= 95.6\nsamples = 59\nvalue = [19, 40]\nclass = No Stroke", fillcolor="#97ccf1"] ;
+0 -> 6 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
+7 [label="MaxLRNCAreaProp <= 0.539\nsamples = 19\nvalue = [11, 8]\nclass = Stroke", fillcolor="#f8ddc9"] ;
+6 -> 7 ;
+8 [label="samples = 14\nvalue = [6, 8]\nclass = No Stroke", fillcolor="#cee6f8"] ;
+7 -> 8 ;
+9 [label="samples = 5\nvalue = [5, 0]\nclass = Stroke", fillcolor="#e58139"] ;
+7 -> 9 ;
+10 [label="MaxCALCArea <= 20.703\nsamples = 40\nvalue = [8, 32]\nclass = No Stroke", fillcolor="#6ab6ec"] ;
+6 -> 10 ;
+11 [label="samples = 21\nvalue = [1, 20]\nclass = No Stroke", fillcolor="#43a2e6"] ;
+10 -> 11 ;
+12 [label="samples = 19\nvalue = [7, 12]\nclass = No Stroke", fillcolor="#acd6f4"] ;
+10 -> 12 ;
+}

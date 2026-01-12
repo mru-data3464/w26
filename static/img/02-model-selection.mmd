@@ -1,0 +1,18 @@
+---
+config:
+  theme: 'base'
+  themeVariables:
+    primaryColor: '#ECECFF'
+    fontFamily: monospace
+---
+
+flowchart TD
+  A["Machine learning"]
+  A --> B["Supervised"]
+  A --> C["Unsupervised"]
+  B --> D["Classification"]
+  B --> E["Regression"]
+  C --> F["Clustering"]
+  C --> G["Dimensionality Reduction"]
+  A --> H["Reinforcement Learning"]:::notNow
+  classDef notNow stroke-width: 2pt, stroke-dasharray: 5 5;
