@@ -39,7 +39,7 @@ The main goal of this exercise is for me to learn about your current habits and 
     2. How well does your model fit the data?
     3. What additional information would help to create a more accurate model?
 
-3. Repeat question (1), but with the `simple_regression_full.csv` dataset. In your report, answer the following:
+3. Repeat question (1), but with the `simple_regression_full.csv` dataset. This contains extra columns; select only the same ones that are present in `simple_regression.csv`. In your report, answer the following:
     1. What additional steps did you need to do to recreate the plot?
     2. Do you have any guess what this dataset represents?
 
