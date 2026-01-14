@@ -153,9 +153,15 @@ For a predicted $\hat{\mathbf{y}}$ and actual $\mathbf{y}$, metrics include:
 - Root mean squared error: $RMSE = \sqrt{MSE}$
 - Mean absolute error: $MAE = \frac{1}{n}\sum_{i=1}^n |y_i - \hat{y}_i|$
 - Mean absolute percentage error: $MAPE = \frac{100}{n}\sum_{i=1}^n \left|\frac{y_i - \hat{y}_i}{y_i}\right|$
-- Coefficient of determination: $R^2 = 1 - \dfrac{\sum_{i=1}^n (y_i - \hat{y}_i)^2}{\sum_{i=1}^n (y_i - \bar{y})^2}$
+- Coefficient of determination: $R^2 = 1 - \frac{\sum_{i=1}^n (y_i - \hat{y}_i)^2}{\sum_{i=1}^n (y_i - \bar{y})^2}$
   ($R^2$ has some [caveats](http://www.feat.engineering/measuring-performance))
 
+## Where we left off on January 12
+
+<!-- 
+_class: title_slide
+_paginate: skip
+-->
 
 ## Regression: ordinary least squares
 
