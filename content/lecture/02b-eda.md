@@ -19,19 +19,20 @@ _paginate: skip
 {{% ignore %}}
 
 # <!--fit-->DATA 3464: Fundamentals of Data Processing
-### <!--fit-->Basic machine learning models
+### <!--fit-->Exploratory Data Analysis
 
 Charlotte Curtis
-January 13, 2026
+January 15, 2026
 
 {{% /ignore %}}
 
 ## This week's topics
-- Exploring and understanding your data
+- Exploratory data analysis: EDA
 - Splitting your data
 - Assignment 1: Exploring Calgary traffic data
 
 **Resources used**:
+- [Feat.Engineering Chapter 3](http://www.feat.engineering/review-predictive-modeling-process)
 
 
 ## Basic things to look at
@@ -51,8 +52,24 @@ January 13, 2026
 ![center h:375px](../../static/img/02-anscombe.png)
 - Not known exactly how he made it, but Drs. Roberta La Haye and Peter Zizler proposed a [compelling argument](https://www.tandfonline.com/doi/full/10.1080/07468342.2024.2385078) for linear algebra
 
+## Case Study: Data visualization to the rescue
+* A [2012 study about honesty](https://www.pnas.org/doi/full/10.1073/pnas.1209746109) reported that "Signing at the beginning makes ethics salient and decreases dishonest self-reports in comparison to signing at the end"
+* In 2020, the authors published a new paper admitting that their original results [could not be replicated](https://www.pnas.org/doi/abs/10.1073/pnas.1911695117), and noticed an anomaly in the **summary statistics**
+* The 2020 paper also published the original data, which was downloaded and visualized by a team of anonymous researchers working with [Data Colada](https://datacolada.org/98)
+* This led to the 2012 paper being retracted, a [$25M lawsuit](https://datacolada.org/116), a [data-driven defense](https://datacolada.org/118)
+
+<div data-marpit-fragment>
+
+> ![IMPORTANT]
+> Moral of the story is, look at your data!
+
+</div>
+
 ## Useful starting points
 <!-- _class: code_reminder -->
+
+Assuming your data is small enough and well structured:
+
 - [`pandas.DataFrame.info`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.info.html): data type, number of non-null, names, dimensions
 - [`pandas.DataFrame.head`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.head.html): return the first `n` rows (default 5)
 - [`pandas.DataFrame.describe`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.describe.html): Compute a bunch of summary statistics
@@ -71,6 +88,10 @@ January 13, 2026
 ## Splitting your data - how
 
 <!-- _class: code_reminder -->
+
+How much EDA before splitting? You might need to know:
+- Are there any missing values?
+- Is there a need for [stratified sampling](http://www.feat.engineering/data-splitting)?
 
 ## Types of exploratory visualizations
 - I will not provide an exhaustive list of visualizations!
@@ -95,3 +116,6 @@ Try tweaking:
 - "Jitter"
   - Mostly for scatter plot of continuous vs categorical data
   - Add a tiny bit of random noise to spread out samples
+
+## Splitting your data
+- Before getting too deep into exploration, we need to **set aside a test set**
