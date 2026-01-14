@@ -82,6 +82,7 @@ Assuming your data is small enough and well structured:
 - [`pandas.DataFrame.info`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.info.html): data type, number of non-null, names, dimensions
 - [`pandas.DataFrame.head`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.head.html): return the first `n` rows (default 5). Also `tail`.
 - [`pandas.DataFrame.describe`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.describe.html): Compute a bunch of summary statistics
+- Various [aggregation statistics](https://pandas.pydata.org/docs/getting_started/intro_tutorials/06_calculate_statistics.html)
 
 > Next up, visualize!
 
@@ -128,9 +129,49 @@ As usual, it depends on the:
   - Stratification needed?
 - Intended **validation approach**
 
-## Side tangent: Validation
+## Side note: validation
+
+![bg right 90%](https://scikit-learn.org/stable/_images/grid_search_cross_validation.png)
+
 - So far we've talked about **training** and **testing** data
 - We also need **validation** data
+- If the dataset is sufficiently large, this can be a separate split
+- We can also use **cross-validation**
+
+<footer>Image source: <a href="https://scikit-learn.org/stable/modules/cross_validation.html">Scikit-learn</a></footer>
+
+## How to split your data
+
+- Simple scenario: random sample (typically 80/20 or 70/30 split)
+- **Only works if:**
+    - Stratification doesn't matter
+    - Data is guaranteed not to change
+    - Data is not a time-series
+> How do we know if stratification is necessary?
+
+## Side tangent: Sampling bias
+
+- Simple example: assume 80% of population likes cilantro
+- Goal: ensure our sample is representative of the population, $\pm 5\%$
+
+The [binomial distribution](https://en.wikipedia.org/wiki/Binomial_distribution) can be used to model the probability of choosing $k$ people who like cilantro from $n$ total participants:
+
+$$P(X = k) = \binom{n}{k}p^k(1-p)^{n-k}, \mathrm{where} \binom{n}{k} = \frac{n!}{k!(n-k)!}$$
+
+## Side tangent: Sampling bias continued
+
+<!--
+  _class: code_reminder 
+-->
+
+$P(X = k)$ is the probability mass function, and the corresponding cumulative distribution function is just the sum up to $k$:
+
+$$P(X \leq k) = \sum_{i=0}^k \binom{n}{i}p^i(1-p)^{n-i}$$
+
+Suppose we **randomly** sample 100 people. What is the probability of fewer than 75 or more than 85 cilantro lovers?
+
+> This is also my excuse to review some probability theory and notation
+
 
 ## Back to visualizations
 <!--
