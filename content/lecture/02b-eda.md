@@ -33,7 +33,16 @@ January 15, 2026
 
 **Resources used**:
 - [Feat.Engineering Chapter 3](http://www.feat.engineering/review-predictive-modeling-process)
+- [R for Data Science (2e), Chapter 10](https://r4ds.hadley.nz/EDA.html)
+- Hands on Machine Learning with Scikit-Learn and Tensorflow/PyTorch, Chapter 2. Available at [MRU Library](https://ebookcentral.proquest.com/lib/mtroyal-ebooks/detail.action?docID=30168989)
 
+## Exploratory data analysis
+The goal of EDA is to **Understand your data**
+1. Ask questions (e.g. are my data normally distributed?)
+2. Look for answers (e.g. by making histograms)
+3. Find more questions and return to step 1 (hmm, those are some weird numbers, what do these values represent?)
+
+> EDA is not a formal process with a strict set of rules. More than anything, EDA is a state of mind. During the initial phases of EDA you should feel free to investigate every idea that occurs to you. Some of these ideas will pan out, and some will be dead ends. -- Hadley Wickham
 
 ## Basic things to look at
 - Data source - File? Database? API? 
@@ -71,27 +80,10 @@ January 15, 2026
 Assuming your data is small enough and well structured:
 
 - [`pandas.DataFrame.info`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.info.html): data type, number of non-null, names, dimensions
-- [`pandas.DataFrame.head`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.head.html): return the first `n` rows (default 5)
+- [`pandas.DataFrame.head`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.head.html): return the first `n` rows (default 5). Also `tail`.
 - [`pandas.DataFrame.describe`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.describe.html): Compute a bunch of summary statistics
-- As soon as you have a general sense of the:
-  - Data scales
-  - Missing features
-  - Distributions, particularly categorical
-- It's time to split the data!
 
-## Splitting your data - why
-
-- We need to set aside a final **test set** to evaluate our final model
-- Humans are great at detecting patterns!
-- Even looking at test data could influence decisions, causing **data leakage**
-
-## Splitting your data - how
-
-<!-- _class: code_reminder -->
-
-How much EDA before splitting? You might need to know:
-- Are there any missing values?
-- Is there a need for [stratified sampling](http://www.feat.engineering/data-splitting)?
+> Next up, visualize!
 
 ## Types of exploratory visualizations
 - I will not provide an exhaustive list of visualizations!
@@ -101,13 +93,53 @@ How much EDA before splitting? You might need to know:
   - Histograms
   - Scatter plots/hexbin plots
   - Box plots/violin plots
+- But before we get too deep into EDA, it's time to **split your data**
 
-## Some simple tricks
+## Why split your data?
+
+![bg right fit](https://tylervigen.com/spurious/correlation/image/3078_the-number-of-skincare-specialists-in-kentucky_correlates-with_google-searches-for-how-to-hide-a-body.svg)
+
+- We need to set aside a final **test set** to evaluate our final model
+- Humans are great at detecting patterns!
+- Even looking at test data could influence decisions, causing **data leakage**
+
+<footer>Image source: <a href="https://tylervigen.com/spurious-correlations">Spurious Correlations</a></footer>
+
+## When to split your data
+
+<!-- _class: code_reminder -->
+
+How much EDA should you do before splitting? You might need to know:
+- Are there any missing values?
+- Is there a need for [stratified sampling](http://www.feat.engineering/data-splitting)?
+- Do the data have a unique identifier beyond the row label?
+- As soon as you have a general sense of the:
+  - Data types
+  - Missing features
+  - Distributions, particularly categorical
+- It's time to split the data!
+
+## How to split your data
+As usual, it depends on the:
+- Data set size $n$
+- Relationship between number of predictors $p$ and $n$
+- Nature of the data:
+  - Time series?
+  - Stratification needed?
+- Intended **validation approach**
+
+## Side tangent: Validation
+- So far we've talked about **training** and **testing** data
+- We also need **validation** data
+
+## Back to visualizations
 <!--
   _class: code_reminder 
 -->
 
-Try tweaking:
+Now that we've got a test set safely saved for later, we're free to explore.
+
+A few things to tweak that can make visualizations more meaningful:
 
 - Histogram bin sizes
   - Aiming for a smooth distribution that works for your data
@@ -116,6 +148,3 @@ Try tweaking:
 - "Jitter"
   - Mostly for scatter plot of continuous vs categorical data
   - Add a tiny bit of random noise to spread out samples
-
-## Splitting your data
-- Before getting too deep into exploration, we need to **set aside a test set**
