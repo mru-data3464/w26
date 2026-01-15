@@ -7,6 +7,9 @@ paginate: true
 headingDivider: 2
 layout: lecture
 code: 01_stroke
+leftoff:
+    - 2026-01-08 end
+    - 2026-01-06
 ---
 
 <!-- 
@@ -168,6 +171,11 @@ In this course (and others, and your career), you will need to know:
 
 </div>
 </div>
+
+## Where we left off on January 6
+<!-- _class: title_slide
+_paginate: skip
+ -->
 
 ## Case study: risk of ischemic stroke
 

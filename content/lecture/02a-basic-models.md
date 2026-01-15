@@ -8,6 +8,8 @@ headingDivider: 2
 math: true
 layout: lecture
 code: 02a_models
+leftoff:
+  - 2026-01-13
 ---
 
 <!-- 
@@ -156,7 +158,7 @@ For a predicted $\hat{\mathbf{y}}$ and actual $\mathbf{y}$, metrics include:
 - Coefficient of determination: $R^2 = 1 - \frac{\sum_{i=1}^n (y_i - \hat{y}_i)^2}{\sum_{i=1}^n (y_i - \bar{y})^2}$
   ($R^2$ has some [caveats](http://www.feat.engineering/measuring-performance))
 
-## Where we left off on January 12
+## Where we left off on January 13
 
 <!-- 
 _class: title_slide
@@ -254,7 +256,7 @@ _class: code_reminder
 </div>
 </div>
 
-## Next up
+## Coming up next
 - Exploring and understanding your data
 - Splitting your data
   - Repeatability considerations

@@ -8,6 +8,8 @@ headingDivider: 2
 math: true
 layout: lecture
 code: 02b_eda
+leftoff:
+  - 2026-01-15
 ---
 
 <!-- 
@@ -68,7 +70,7 @@ The goal of EDA is to **Understand your data**
 
 <div data-marpit-fragment>
 
-> ![IMPORTANT]
+> [!IMPORTANT]
 > Moral of the story is, look at your data!
 
 </div>
@@ -84,6 +86,12 @@ Assuming your data is small enough and well structured:
 - Various [aggregation statistics](https://pandas.pydata.org/docs/getting_started/intro_tutorials/06_calculate_statistics.html)
 
 > Next up, visualize!
+
+## Where we left off on January 15
+<!-- 
+_class: title_slide
+_paginate: skip
+-->
 
 ## Types of exploratory visualizations
 - I will not provide an exhaustive list of visualizations!

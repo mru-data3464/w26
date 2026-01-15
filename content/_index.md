@@ -11,3 +11,8 @@ Welcome to DATA 3464 in Winter 2026!
 This website will be updated with content before each lecture and lab. Announcements, grades, and other private information will be communicated through D2L.
 
 See a mistake? Why not [submit an issue](https://github.com/mru-data3464/w26)?
+
+## Where we left off
+Sometimes we end the lecture partway through a topic. Here's some quick links to where we ended on a given day:
+
+{{< leftoff >}}
