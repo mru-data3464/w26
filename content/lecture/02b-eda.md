@@ -27,9 +27,8 @@ January 15, 2026
 {{% /ignore %}}
 
 ## This week's topics
-- Exploratory data analysis: EDA
+- Exploratory data analysis (EDA)
 - Splitting your data
-- Assignment 1: Exploring Calgary traffic data
 
 **Resources used**:
 - [Feat.Engineering Chapter 3](http://www.feat.engineering/review-predictive-modeling-process)
@@ -131,6 +130,8 @@ As usual, it depends on the:
 
 ## Side note: validation
 
+<!-- _class: code_reminder -->
+
 ![bg right 90%](https://scikit-learn.org/stable/_images/grid_search_cross_validation.png)
 
 - So far we've talked about **training** and **testing** data
@@ -140,16 +141,28 @@ As usual, it depends on the:
 
 <footer>Image source: <a href="https://scikit-learn.org/stable/modules/cross_validation.html">Scikit-learn</a></footer>
 
+## Validation
+- Validation data is used to make decisions about your model, e.g.
+  - Model selection
+  - Tuning hyperparameters
+  - Monitor training progress
+- However, validation data is not used to directly *train* a model
+- Think of it like a test-adjacent set where you can repeatedly try stuff on your training set, then evaluate on validation
+
+> [!TIP]
+> Cross-validation is a way of checking your model choice and parameters, but final training should be done on the entire training set
+
 ## How to split your data
 
-- Simple scenario: random sample (typically 80/20 or 70/30 split)
+- Simple scenario: random sample (typically 70-80% for training)
 - **Only works if:**
     - Stratification doesn't matter
     - Data is guaranteed not to change
-    - Data is not a time-series
+    - Data is not a time-series (later topic)
 > How do we know if stratification is necessary?
 
-## Side tangent: Sampling bias
+## Sampling bias
+Stratification is used to mitigate **sampling bias**
 
 - Simple example: assume 80% of population likes cilantro
 - Goal: ensure our sample is representative of the population, $\pm 5\%$
@@ -158,7 +171,7 @@ The [binomial distribution](https://en.wikipedia.org/wiki/Binomial_distribution)
 
 $$P(X = k) = \binom{n}{k}p^k(1-p)^{n-k}, \mathrm{where} \binom{n}{k} = \frac{n!}{k!(n-k)!}$$
 
-## Side tangent: Sampling bias continued
+## Sampling bias continued
 
 <!--
   _class: code_reminder 
@@ -170,17 +183,43 @@ $$P(X \leq k) = \sum_{i=0}^k \binom{n}{i}p^i(1-p)^{n-i}$$
 
 Suppose we **randomly** sample 100 people. What is the probability of fewer than 75 or more than 85 cilantro lovers?
 
-> This is also my excuse to review some probability theory and notation
+> Here we've defined an "unbiased sample" as being $\pm5\%$
 
+## Stratification approach
+- The need for stratification depends on sample size, distribution of stratification category, and how much bias you're willing to accept
+  | | Small Sample Size | Large Sample Size |
+  | --| -- | -- |
+  | Unbalanced Classes | Stratify | Maybe |
+  | Balanced Classes | Maybe | Not necessary |
+
+- Stratification categories can be the target variable, or a predictor
+- Goal is to have the same class distribution in both testing and training
+
+## Repeatable randomness
+
+<!-- _class: code_reminder -->
+
+- At minimum, you should **always set a random seed** so that every time you sample your data it is the same "random sample"
+- This isn't enough if your data might get updated! You can:
+  - Store the IDs of your split offline, then sample any new data and append to them (ensuring that test/train never mix)
+  - Get fancy with a deterministic method like hashing features to create unique IDs, then thresholding based on maximum possible value
+  - Example: compute [CRC](https://docs.python.org/3/library/zlib.html#zlib.crc32) to get a 32-bit integer, select $< 0.8\times 2^{32}$
 
 ## Back to visualizations
-<!--
-  _class: code_reminder 
--->
+<!-- _class: code_reminder -->
 
-Now that we've got a test set safely saved for later, we're free to explore.
+Now that we've got a test set safely stashed, we can **ask questions** about the data and use visualizations and statistics to answer them. Some examples:
+- Do any of my features seem to be related to my target?
+- Do any of my features seem to be related to each other?
+- Why are some values more common than others?
+- Do these values make sense in the context of my **domain knowledge**?
+- If I group my data together in some way, are there clear trends?
 
-A few things to tweak that can make visualizations more meaningful:
+<footer><a href="https://r4ds.hadley.nz/EDA.html#questions">R for Data Science</a> has some good examples of further questions</footer>
+
+## Some handy tricks
+
+A few things to tweak that can make visualizations easier to read:
 
 - Histogram bin sizes
   - Aiming for a smooth distribution that works for your data
@@ -189,3 +228,12 @@ A few things to tweak that can make visualizations more meaningful:
 - "Jitter"
   - Mostly for scatter plot of continuous vs categorical data
   - Add a tiny bit of random noise to spread out samples
+
+## Coming up next
+- Lab: Accessing the City of Calgary API
+- Assignment 1, available soon!
+- Categorical data
+- Encoding strategies
+- Dealing with missing values
+
+[Feature Engineering Chapter 5](http://www.feat.engineering/encoding-categorical-predictors)
