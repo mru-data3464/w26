@@ -72,7 +72,7 @@ In your data exploration document, do the following:
     > Features A and B look like they might have a non-linear relationship, let's play with those some more.
     > ```python
     > # is it a second order polynomial?
-    > plt.scatter(df["A"], df["B"]^^2)
+    > plt.scatter(df["A"], df["B"]**2)
     > ```
     > etc.
 8. If, along the way, you see something interesting, you may want to update your research question. That's fine! At the end of your exploration (which honestly could go on forever, but I'd like to see at least 6 or so useful visualizations), **re-state your research question** that you would like to answer moving forward.
