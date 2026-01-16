@@ -1,5 +1,5 @@
 ---
-title: "Week 2a: Basic machine learning models"
+title: "2. Basic machine learning models"
 date: 2026-01-13
 marp: true
 theme: marp-mru
@@ -7,7 +7,7 @@ paginate: true
 headingDivider: 2
 math: true
 layout: lecture
-code: 02a_models
+code: 02_models
 leftoff:
   - 2026-01-13
 ---

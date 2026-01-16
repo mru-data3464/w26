@@ -1,5 +1,5 @@
 ---
-title: "Week 1: Introduction"
+title: "1. Introduction"
 date: 2026-01-06
 marp: true
 theme: marp-mru

@@ -1,5 +1,5 @@
 ---
-title: "Week 2b: Exploratory Data Analysis"
+title: "Exploratory Data Analysis"
 date: 2026-01-15
 marp: true
 theme: marp-mru
@@ -7,7 +7,7 @@ paginate: true
 headingDivider: 2
 math: true
 layout: lecture
-code: 02b_eda
+code: 03_eda
 leftoff:
   - 2026-01-15
 ---
@@ -239,7 +239,7 @@ A few things to tweak that can make visualizations easier to read:
 
 ## Coming up next
 - Lab: Accessing the City of Calgary API
-- Assignment 1, available soon!
+- Assignment 1, now available!
 - Categorical data
 - Encoding strategies
 - Dealing with missing values
