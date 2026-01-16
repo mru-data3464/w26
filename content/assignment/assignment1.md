@@ -35,7 +35,7 @@ You will be working with the following datasets from https://data.calgary.ca:
 - [Traffic signals](https://data.calgary.ca/Health-and-Safety/Traffic-Signals/qr97-4jvx/about_data)
 
 In addition, integrate **one or more** of the following, or an additional **dataset of your choice**:
-> ![IMPORTANT]
+> [!IMPORTANT]
 > **These are very large datasets!** Do not simply download the CSV and try to work with it that way. Either use the city's tools to filter and download a subset, or use the API endpoint to query specific ranges. In Monday's lab (January 19th) we'll look at fetching data through this API.
 - [311 service requests](https://data.calgary.ca/Services-and-Amenities/311-Service-Requests/iahh-g8bj/about_data)
 - [Traffic counts](https://data.calgary.ca/Transportation-Transit/Traffic-Counts-at-Permanent-stations/vuyp-sbjp/about_data) on arterial roads
