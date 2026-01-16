@@ -1,14 +1,31 @@
-<ul>
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Lecture</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
 {{ range (sort (where .Site.RegularPages "Section" "lecture") "Date" "desc") }}
   {{ $page := . }}
   {{ range $page.Params.leftoff }}
     {{ $leftoff := split . " " }}
     {{ $date := index $leftoff 0 }}
     {{ if in $leftoff "end" }}
-      <li>{{ dateFormat "January 2" $date }}: Completed <a href="{{ $page.Permalink }}">{{ $page.Title }}</a></li>
+    <tr>
+      <td>{{ dateFormat "January 2" $date }}</td>
+      <td><a href="{{ $page.Permalink }}">{{ $page.Title }}</a></td>
+      <td>Completed</td>
+    </tr>
     {{ else }}
-      <li>{{ dateFormat "January 2" $date }}: Partway through <a href="{{ $page.Permalink }}#where-we-left-off-on-{{ dateFormat "january-2" . | urlize }}">{{ $page.Title }}</a></li>
+    <tr>
+      <td>{{ dateFormat "January 2" $date }}</td>
+      <td><a href="{{ $page.Permalink }}#where-we-left-off-on-{{ dateFormat "january-2" . | urlize }}">{{ $page.Title }}</a></td>
+      <td>Partway through</td>
+    </tr>
     {{ end }}
   {{ end }}
 {{ end }}
-</ul>
+  </tbody>
+</table>
