@@ -1,5 +1,5 @@
 ---
-title: "Lab 2: Fetching, exploring, and splitting data"
+title: "Lab 2: Fetching and exploring data"
 date: 2026-01-19
 # weight: 1
 # bookFlatSection: false
@@ -11,8 +11,10 @@ bookToc: true
 # bookHref: ''
 ---
 
+# {{< param "title" >}}
+
 ## Objective
-I've prepared a small exercise to work with the City of Calgary data
+I've prepared a small exercise to work with City of Calgary data. This is relevant to your first assignment, and is an example of the widely-used [OAuth](https://en.wikipedia.org/wiki/OAuth) protocol. Admittedly, I only understand enough of this protocol to be somewhat dangerous.
 
 ## Setup
 First, update your labs repo by opening it on GitHub and following the instructions in the readme file. This should result in the `lab02` folder with starter code being added. To download to your local machine, you may need to **commit all local changes** first and then run `git pull`.
