@@ -7,6 +7,8 @@ paginate: true
 headingDivider: 2
 layout: lecture
 toc: true
+code: ""
+leftoff: []
 ---
 
 <!-- 
@@ -25,6 +27,6 @@ Charlotte Curtis
 
 {{% /ignore %}}
 
-## Where we left off
+## Topic overview
 
-## Today's topics
+**Resources used:**

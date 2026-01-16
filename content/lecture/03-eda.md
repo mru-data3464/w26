@@ -28,7 +28,7 @@ January 15, 2026
 
 {{% /ignore %}}
 
-## This week's topics
+## Topic overview
 - Exploratory data analysis (EDA)
 - Splitting your data
 

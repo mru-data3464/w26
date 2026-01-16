@@ -28,7 +28,7 @@ January 13, 2026
 
 {{% /ignore %}}
 
-## This week's topics
+## Topic overview
 - Some common machine learning tasks and models
 - Evaluating model performance
 - Limitations and assumptions
