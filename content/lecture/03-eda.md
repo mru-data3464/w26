@@ -1,5 +1,5 @@
 ---
-title: "Exploratory Data Analysis"
+title: "3. Exploratory Data Analysis"
 date: 2026-01-15
 marp: true
 theme: marp-mru
@@ -238,10 +238,10 @@ A few things to tweak that can make visualizations easier to read:
   - Add a tiny bit of random noise to spread out samples
 
 ## Coming up next
-- Lab: Accessing the City of Calgary API
 - Assignment 1, now available!
 - Categorical data
-- Encoding strategies
-- Dealing with missing values
+  - Exploring
+  - Encoding strategies
+  - Dealing with missing values
 
-[Feature Engineering Chapter 5](http://www.feat.engineering/encoding-categorical-predictors)
+> [Feature Engineering Chapter 5](http://www.feat.engineering/encoding-categorical-predictors)
