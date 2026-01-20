@@ -7,7 +7,7 @@ paginate: true
 headingDivider: 2
 layout: lecture
 toc: true
-code: ""
+code: 04_categorical
 leftoff: []
 ---
 
