@@ -95,7 +95,34 @@ January 20, 2026
 -->
 
 ## Another approach: target encoding
+- Basic concept: replace the category with the mean of the target
+- Essential to avoid data leakage!
+- Example: predicting weight of animal
+
+<div class="centred">
+
+| Animal |     | mean_kg |
+| ------ | --- | ------- |
+| cat    | →   | 4.1     |
+| dog    | →   | 15.4    |
+| rabbit | →   | 2.2     |
+
+</div>
+
 
 ## Getting fancy
 - Feature hashing or the "hash trick"
+- Good if you have too many categories, or combinations of categories
+- Converts each category into a fixed-length feature vector
 
+<div class="centred">
+
+| Animal |     | A_0 | A_1 | A_2 | ... | A_16 |
+| ------ | --- | --- | --- | --- | --- | ---- |
+| cat    | →   | 1   | 0   | 0   | ... | 1    |
+| dog    | →   | 0   | 1   | 0   | ... | 1    |
+| rabbit | →   | 1   | 0   | 1   | ... | 0    |
+
+</div>
+
+## Missing values in categorical data
