@@ -20,10 +20,10 @@ _paginate: skip
 {{% ignore %}}
 
 ## <!--fit-->DATA 3464: Fundamentals of Data Processing
-### <!--fit--><< Long form title >>
+### <!--fit-->Categorical Data
 
 Charlotte Curtis
-January 20, 2026
+January 22, 2026
 
 {{% /ignore %}}
 
@@ -35,6 +35,12 @@ January 20, 2026
 
 **Resources used:**
 - [Feature Engineering Chapter 5](http://www.feat.engineering/encoding-categorical-predictors)
+
+## Exploring categorical data
+- `pandas.DataFrame.value_counts()` - how many of each category?
+- Use category to group, then compute summary stats
+- Plot color per category
+- Scatter plot with jitter
 
 ## What is categorical data?
 - Samples can take on one of several discrete values or groups

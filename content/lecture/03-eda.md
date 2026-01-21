@@ -9,6 +9,7 @@ math: true
 layout: lecture
 code: 03_eda
 leftoff:
+  - 2026-01-20 end
   - 2026-01-15
 ---
 
