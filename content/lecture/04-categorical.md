@@ -165,6 +165,87 @@ Drawbacks
 
 </div>
 
+## Advantages/disadvantages of various methods
+
+<div class="columns">
+<div>
+
+### Ordinal
+
+<span class="pro">
+
+- Compact (1 column/feature)
+- Only useful for naturally ordered data
+
+</span>
+<span class="con">
+
+- Imposes (linear) relationship
+- Difficult to deal with novel categories
+
+</span>
+</div>
+<div>
+
+### One-hot
+
+<span class="pro">
+
+- No assumptions made about relationships
+- Novel features implied by 0
+
+</span>
+<span class="con">
+
+- Memory intensive
+- Not good for high cardinality
+- Potential collinearity issues
+
+</span>
+</div>
+</div>
+
+## Advantages/disadvantages continued
+
+<div class="columns">
+<div>
+
+### Target encoding
+
+<span class="pro">
+
+- Powerful if strong predictor
+- Compact
+
+</span>
+<span class="con">
+
+- Doesn't work for unsupervised
+- Central tendency poor measure for categories with few samples
+- Difficult to deal with novel categories
+
+</span>
+</div>
+<div>
+
+### Feature hashing
+
+<span class="pro">
+
+- Natively handles novel categories
+- Compact (fixed columns/features)
+- Good for high cardinality
+
+</span>
+<span class="con">
+
+- Risk of hash collision
+- Loss of interpretability/meaning
+
+</span>
+</div>
+</div>
+
 ## Coming up next
 - Assignment 1 due next week
 - Lab: practice with modelling process
