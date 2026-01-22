@@ -56,8 +56,7 @@ We've already done some of this, but some ideas to consider:
 
 
 ## Representing categorical data
-- Tree-based models can handle string-based categories as-is
-- Most other models need numbers
+- ~~Tree-based models can handle string-based categories as-is~~ Not in Scikit-Learn
 - Consider:
     - Ordinal or nominal?
     - How many possible categories (cardinality)?
