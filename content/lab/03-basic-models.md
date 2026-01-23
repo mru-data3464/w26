@@ -63,5 +63,13 @@ Consider this a "Hello, world!" of supervised learning! We already did a bit of 
    - Dropping features that don't add value
    - Training a [forest of trees](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html)
    - Changing tree depth to avoid overfitting
+  
+   As you make changes, record why you're making the change and your observations. Since this may involve going back and tweaking just one or two lines of code, it's okay to write these as comments in the code, e.g.:
+   ```python
+   # Started with max depth of 3 but it seemed like it wasn't learning enough
+   # Increasing to 4 improves predictions without overfitting
+   tree = DecisionTreeClassifier(maxDepth=4)
+   ```
 
 ## Submit
+Push your code and observations to your GitHub repo for your completion-based lab mark.
