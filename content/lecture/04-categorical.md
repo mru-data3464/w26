@@ -8,7 +8,8 @@ headingDivider: 2
 layout: lecture
 toc: true
 code: 04_categorical
-leftoff: []
+leftoff:
+    - 2026-01-22
 ---
 
 <!-- 
@@ -134,6 +135,13 @@ Drawbacks
 - Mean is not great for categories with few examples
 -->
 
+## Where we left off on January 22
+<!-- 
+_class: title_slide
+_paginate: skip
+-->
+
+
 ## Getting fancy with feature hashing
 <!-- _class: code_reminder -->
 - Good if you have too many categories, or combinations of categories
@@ -246,7 +254,7 @@ Drawbacks
 </div>
 
 ## Coming up next
-- Assignment 1 due next week
+- Assignment 1 January 30th
 - Lab: practice with modelling process
 
 > [Feature Engineering Chapter 5](http://www.feat.engineering/encoding-categorical-predictors)
