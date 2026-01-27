@@ -36,6 +36,15 @@ January 27, 2026
 - [Feature Engineering Chapter 6](http://www.feat.engineering/engineering-numeric-predictors)
 - Hands on Machine Learning with Scikit-Learn and Tensorflow/PyTorch, Chapter 4. Available at [MRU Library](https://ebookcentral.proquest.com/lib/mtroyal-ebooks/detail.action?docID=30168989)
 - [Scikit-learn user guide: Chapter 7](https://scikit-learn.org/stable/data_transforms.html)
+- Introduction to Machine Learning with Python. Available at <a href="https://librarysearch.mtroyal.ca/permalink/01MTROYAL_INST/1qa1aqk/cdi_overdrive_books_ODN0002976888">MRU Library</a>
+
+## Common 1:1 transformations
+
+> "Most models work best when each feature (and in regression also the target) is loosely Gaussian distributed" -- Introduction to Machine Learning with Python
+
+- Scaling: normalization or standardization
+- Nonlinear transforms: log, square root, polynomial
+- Fancier methods: Box-Cox, Yeo-Johnson
 
 ## A brief intro to gradient descent
 - Many linear models minimize some cost function through **gradient descent**
@@ -64,3 +73,21 @@ For a loss (or cost) function such as $MSE(\mathrm{\theta}) = \frac{1}{m}(\mathb
 <footer>Figure 4-7 from Hands-on Machine Learning</footer>
 
 ## Approaches to scaling
+
+![](../../static/img/05-scaling.png)
+
+<div class="columns">
+
+Standardize: $x_{scaled} = \dfrac{x - \mu_x}{\sigma_x}$ 
+
+Normalize: $x_{scaled} = \dfrac{x - \mathrm{min}(x)}{\mathrm{max}(x) - \mathrm{min}(x)}$ 
+
+</div>
+
+## Nonlinear transforms
+
+![bg right fit](../../static/img/05-counts.png)
+
+- Common case: count data
+- Example: how often do you check D2L throughout the semester?
+- Not a Gaussian distribution!
