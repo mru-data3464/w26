@@ -91,7 +91,7 @@ Normalize: $x_{scaled} = \dfrac{x - \mathrm{min}(x)}{\mathrm{max}(x) - \mathrm{m
 ![bg right fit](../../static/img/05-counts.png)
 
 - Common case: count data
-- Example: how does a student check D2L?
-- Not a Gaussian distribution! (not that it strictly needs to be)
+- Example: Ask 1000 students how often they checked D2L that day
+- Not a Gaussian distribution!
 
 ## Pipelines in Scikit-learn
