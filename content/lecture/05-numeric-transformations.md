@@ -86,8 +86,12 @@ Normalize: $x_{scaled} = \dfrac{x - \mathrm{min}(x)}{\mathrm{max}(x) - \mathrm{m
 
 ## Nonlinear transforms
 
+<!-- _class: code_reminder -->
+
 ![bg right fit](../../static/img/05-counts.png)
 
 - Common case: count data
-- Example: how often do you check D2L throughout the semester?
-- Not a Gaussian distribution!
+- Example: how does a student check D2L?
+- Not a Gaussian distribution! (not that it strictly needs to be)
+
+## Pipelines in Scikit-learn
