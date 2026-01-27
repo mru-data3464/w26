@@ -7,8 +7,9 @@ paginate: true
 headingDivider: 2
 layout: lecture
 toc: true
-code: ""
-leftoff: []
+code: 05_numeric
+leftoff:
+  - 2026-01-27
 ---
 
 <!-- 
@@ -93,5 +94,62 @@ Normalize: $x_{scaled} = \dfrac{x - \mathrm{min}(x)}{\mathrm{max}(x) - \mathrm{m
 - Common case: count data
 - Example: Ask 1000 students how often they checked D2L that day
 - Not a Gaussian distribution!
+- What about the central limit theorem?
 
-## Pipelines in Scikit-learn
+## Where we left off on January 27
+<!-- 
+_class: title_slide
+_paginate: skip 
+-->
+
+## Transformations in training vs inference
+- Define functions, e.g.
+  ```python
+  def standardize(X, mu, sigma):
+      return (X - mu) / sigma
+  ```
+- Compute scaling parameters **on the training data**, then stash them somewhere:
+  ```python
+  mu = X_train.mean()
+  sigma = X_train.std()
+  # ... later on, during inference
+  X = standardize(X, mu, sigma)
+  ```
+  > What would happen if `standardize` instead computed values on the fly?
+  > What else am I missing here?
+
+## Manual approach in the wild
+You may run across [magic numbers](https://en.wikipedia.org/wiki/Magic_number_(programming)), e.g from the [PyTorch tutorials](https://docs.pytorch.org/tutorials/beginner/data_loading_tutorial.html):
+
+  ```python
+  import torch
+  from torchvision import transforms, datasets
+
+  data_transform = transforms.Compose([
+          transforms.RandomResizedCrop(224),
+          transforms.RandomHorizontalFlip(),
+          transforms.ToTensor(),
+          transforms.Normalize(mean=[0.485, 0.456, 0.406],
+                               std=[0.229, 0.224, 0.225])
+      ])
+  ```
+This really should have a comment! Derived from [ImageNet](https://www.image-net.org/index.php).
+
+## An alternative solution: Scikit-learn `Pipeline`s
+<!-- 
+_class: code_reminder 
+-->
+- Hard-coding scaling (and other) parameters is okay, provided you can **justify the choice** and **document where they came from**
+- Scikit-learn has a handy [Pipeline](https://scikit-learn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html) class that handles this for you
+- Each step in the pipeline has a `fit` and `transform` method
+  - `fit` computes parameters from the training data
+  - `transform` applies the transformation
+  - `fit_transform` does both -- **only use on training data!**
+- You can call these functions on the whole pipeline to fit or apply all in one go
+
+## Different processing for different features
+- Linear pipelines are great for doing the same thing to multiple features
+- Most of the time, different features need different processing
+- We can use a [ColumnTransformer](https://scikit-learn.org/stable/modules/generated/sklearn.compose.ColumnTransformer.html) to split the pipeline
+  ![center h:300](../../static/img/05-column-transform.png)
+<footer>From Scikit-learn <a href="https://scikit-learn.org/stable/auto_examples/compose/plot_column_transformer_mixed_types.html">Column transformer</a> example.</footer>
