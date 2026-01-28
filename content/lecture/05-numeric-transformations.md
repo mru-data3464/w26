@@ -148,6 +148,7 @@ _class: code_reminder
 - You can call these functions on the whole pipeline to fit or apply all in one go
 
 ## Different processing for different features
+<!-- _class: code_reminder -->
 - Linear pipelines are great for doing the same thing to multiple features
 - Most of the time, different features need different processing
 - We can use a [ColumnTransformer](https://scikit-learn.org/stable/modules/generated/sklearn.compose.ColumnTransformer.html) to split the pipeline
