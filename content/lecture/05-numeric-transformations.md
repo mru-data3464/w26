@@ -136,9 +136,6 @@ You may run across [magic numbers](https://en.wikipedia.org/wiki/Magic_number_(p
 This really should have a comment! Derived from [ImageNet](https://www.image-net.org/index.php).
 
 ## An alternative solution: Scikit-learn `Pipeline`s
-<!-- 
-_class: code_reminder 
--->
 - Hard-coding scaling (and other) parameters is okay, provided you can **justify the choice** and **document where they came from**
 - Scikit-learn has a handy [Pipeline](https://scikit-learn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html) class that handles this for you
 - Each step in the pipeline has a `fit` and `transform` method
@@ -147,10 +144,59 @@ _class: code_reminder
   - `fit_transform` does both -- **only use on training data!**
 - You can call these functions on the whole pipeline to fit or apply all in one go
 
-## Different processing for different features
+## `Pipeline`
+- The [Pipeline](https://scikit-learn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html) class chains things together in a linear fashion
+- Output from one step is input to the next
+- `make_pipeline` is slightly simpler syntax (no names needed)
+  ```python
+  from sklearn.pipeline import make_pipeline, Pipeline
+  pipeline = make_pipeline(
+      StandardScaler(),
+      SGDClassifier()
+  )
+  # or, equivalently:
+  pipeline = Pipeline([
+      ('scaler', StandardScaler()),
+      ('sgd', SGDClassifier())
+  ])
+  ```
+
+## `ColumnTransformer`
 <!-- _class: code_reminder -->
-- Linear pipelines are great for doing the same thing to multiple features
-- Most of the time, different features need different processing
-- We can use a [ColumnTransformer](https://scikit-learn.org/stable/modules/generated/sklearn.compose.ColumnTransformer.html) to split the pipeline
+- The [ColumnTransformer](https://scikit-learn.org/stable/modules/generated/sklearn.compose.ColumnTransformer.html) selects specific features and processes in parallel
+- Most of the time mixed dataset need this
   ![center h:300](../../static/img/05-column-transform.png)
 <footer>From Scikit-learn <a href="https://scikit-learn.org/stable/auto_examples/compose/plot_column_transformer_mixed_types.html">Column transformer</a> example.</footer>
+
+## 1:many transformations
+- So far our numeric transformations have been 1:1
+- 1:many creates multiple features from 1, like binning
+- **Basis expansion** introduces nonlinearity to a continuous feature, e.g.:
+  $$x \rightarrow [\beta_1x, \beta_2x^2, \beta_3x^3]$$
+- More exciting is the **spline** version where you can define different polynomials for different ranges of $x$
+
+<footer>Full disclosure: I have never used this approach</footer>
+
+## many:many transformations
+<!-- _class: code_reminder -->
+
+![bg right:30% fit](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/GaussianScatterPCA.svg/1280px-GaussianScatterPCA.svg.png)
+- Linear projection methods create new features:
+  $$X^* = XA$$
+  where $A$ is the *projection matrix* and $X^*$ is the transformed data
+- We can use this for **dimensionality reduction** by only keeping some of $X^*$
+- Example: Principle Component Analysis (PCA) finds the set of orthogonal vectors that explain the most variance
+
+<footer>Figure from <a href="https://en.wikipedia.org/wiki/Principal_component_analysis">Wikipedia</a></footer>
+
+## Summary
+- Numerical data often needs to be transformed to fit model assumptions
+- Standardizing (and maybe normalizing) are very common
+- Nonlinear transformations can also be beneficial
+- Dimensionality reduction can help with model or visualization
+- As usual, **let the data be your guide**
+
+## Coming up next
+- Assignment 1 - due Friday, ish (Monday is fine, and let me know if you need more than that)
+- Lab: practice with transformation pipelines
+- Next topics: Missing data and interaction effects
