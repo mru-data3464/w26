@@ -9,6 +9,7 @@ layout: lecture
 toc: true
 code: 05_numeric
 leftoff:
+  - 2026-01-29
   - 2026-01-27
 ---
 
@@ -176,6 +177,10 @@ This really should have a comment! Derived from [ImageNet](https://www.image-net
 - More exciting is the **spline** version where you can define different polynomials for different ranges of $x$
 
 <footer>Full disclosure: I have never used this approach</footer>
+
+## Where we left off on January 29
+<!-- _class: title_slide
+_paginate: skip -->
 
 ## many:many transformations
 <!-- _class: code_reminder -->
