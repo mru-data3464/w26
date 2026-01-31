@@ -183,16 +183,40 @@ This really should have a comment! Derived from [ImageNet](https://www.image-net
 _paginate: skip -->
 
 ## many:many transformations
-<!-- _class: code_reminder -->
 
 ![bg right:30% fit](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/GaussianScatterPCA.svg/1280px-GaussianScatterPCA.svg.png)
 - Linear projection methods create new features:
   $$X^* = XA$$
   where $A$ is the *projection matrix* and $X^*$ is the transformed data
 - We can use this for **dimensionality reduction** by only keeping some of $X^*$
-- Example: Principle Component Analysis (PCA) finds the set of orthogonal vectors that explain the most variance
+- Example: Principle component analysis (PCA) finds the set of orthogonal vectors that explain the most variance
 
 <footer>Figure from <a href="https://en.wikipedia.org/wiki/Principal_component_analysis">Wikipedia</a></footer>
+
+## Variance and covariance - Review (?)
+<!-- _class: code_reminder -->
+- The **variance** of a single feature $\mathbf{x}$ is:
+  $$\mathrm{var}(\mathbf{x}) = \frac{\sum_1^n (x_i - \mu_x)^2}{n}$$
+- The **covariance** between two features $\mathbf{x_1}$ and $\mathbf{x_2}$ is:
+  $$\mathrm{cov}(\mathbf{x_1}, \mathbf{x_2}) = \frac{\sum_1^n (x_{1i} - \mu_{x_1})(x_{2i} - \mu_{x_2})}{n}$$
+- Independent variables will have low covariance, but low covariance does not necessarily mean independence!
+
+  <footer>Or divide by <em>n-1</em> for an unbiased estimate of the population variance</footer>
+
+## Covariance matrix
+- The **covariance matrix** between all features in a matrix $X$ is:
+  $$\mathrm{cov}(X) = \begin{bmatrix} \mathrm{var}(\mathbf{x_1}) & \mathrm{cov}(\mathbf{x_1}, \mathbf{x_2}) & \cdots & \mathrm{cov}(\mathbf{x_1}, \mathbf{x_m}) \\ \mathrm{cov}(\mathbf{x_2}, \mathbf{x_1}) & \mathrm{var}(\mathbf{x_2}) & \cdots & \mathrm{cov}(\mathbf{x_2}, \mathbf{x_m}) \\ \vdots & \vdots & \ddots & \vdots \\ \mathrm{cov}(\mathbf{x_m}, \mathbf{x_1}) & \mathrm{cov}(\mathbf{x_m}, \mathbf{x_2}) & \cdots & \mathrm{var}(\mathbf{x_m}) \end{bmatrix}$$
+
+- Just like regular variance, covariance scales with the data
+- If you normalize this, you get the **correlation matrix**
+
+## Back to PCA
+- Principle component analysis, proposed in 1901 by [Karl Pearson](https://en.wikipedia.org/wiki/Karl_Pearson), is a linear projection of multidimensional data onto the axes of maximum variance
+- The axes are found by **eigendecomposition** of the covariance matrix:
+  $$C = Q\Lambda Q^{-1}$$
+- The eigenvectors $Q$ form the new orthogonal basis for the covariance matrix $C$, while the eigenvalues $\Lambda$ represent the amount of variance "explained"
+- $X^*$ can be calculated as:
+  $$X^* = XQ$$
 
 ## Summary
 - Numerical data often needs to be transformed to fit model assumptions
