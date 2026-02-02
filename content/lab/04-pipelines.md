@@ -20,6 +20,9 @@ Learn a bit about:
 
 Since you've already done a lot of painful wrangling in your first assignment to combine data into a useful tabular form, I've done this bit for you in this lab. We're also going to use the same (sort of) housing assessment data from [lab 2](/lab/02-fetch-and-explore), so the dataset should be familiar.
 
+> If you are unable to fetch data from the City:
+> I've put a copy of a (200MB+) CSV version at "I:\Labs\CompSci\Resources\DATA 3464\housing_data_pre_split.csv", accessible either through the lab computers or WebFiles at gp.mtroyal.ca
+
 ## Setup
 Merge in the new pull request from your labs repo to get the starter code. This time you should be able to enter your credentials and hit go, and then it'll fetch the data and do some preliminary cleaning. In the end, you'll be left with a train/test/validation split of residential housing assessments with the following columns.
 
