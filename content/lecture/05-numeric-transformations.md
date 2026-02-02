@@ -179,6 +179,9 @@ This really should have a comment! Derived from [ImageNet](https://www.image-net
 <footer>Full disclosure: I have never used this approach</footer>
 
 ## Where we left off on January 29
+
+### Dimensionality reduction methods<!-- fit -->
+
 <!-- _class: title_slide
 _paginate: skip -->
 
@@ -231,14 +234,6 @@ _paginate: skip -->
   X_reduced = pca.fit_transform(X)
   ```
 
-> Why might this be useful?
-
-<!-- 
-Visualization
-Too many features can be harmful for the model
-Data compression
- -->
-
 ## Linear discriminant analysis (LDA)
 - Similar to PCA, but **supervised**
 - Finds basis that maximize **class separability**
@@ -248,7 +243,39 @@ Data compression
   - Classes have identical covariance matrices
 - Implemented in Scikit-learn as [LinearDiscriminantAnalysis](https://scikit-learn.org/stable/modules/generated/sklearn.discriminant_analysis.LinearDiscriminantAnalysis.html)
 
+## Other methods
+- It seems crazy, but [random projections](https://scikit-learn.org/stable/modules/random_projection.html) can work to reduce dimensionality
+- Another many:many transformation that has gained popularity in the "Deep Learning era" is the **autoencoder**
+- These are (typically) neural networks that learn a lower-dimensional representation by training the output to match the input
+- The "bottleneck" layer in the middle is the reduced representation
+- During inference, the model is chopped in half
 
+<!-- draw  on the board -->
+
+## Pros and cons of dimensionality reduction
+
+<!-- Discussion time -->
+
+<div class="columns">
+<div>
+
+### Pros
+<!-- - Can improve model performance by:
+  - removing noise
+  - reducing multicollinearity
+- Can reduce computational cost
+- Can help with visualization -->
+
+</div>
+<div>
+
+### Cons
+<!-- - Throwing out information
+- Harder to interpret results
+- May not actually improve anything -->
+
+</div>
+</div>
 
 ## Summary
 - Numerical data often needs to be transformed to fit model assumptions
@@ -258,6 +285,6 @@ Data compression
 - As usual, **let the data be your guide**
 
 ## Coming up next
-- Assignment 1 - due Friday, ish (Monday is fine, and let me know if you need more than that)
-- Lab: practice with transformation pipelines
+- ~~Assignment 1 - due Friday, ish (Monday is fine, and let me know if you need more than that)~~ - Already passed!
+- ~~Lab: practice with transformation pipelines~~ Already passed!
 - Next topic: Missing data, outliers, and interaction effects

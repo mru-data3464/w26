@@ -1,0 +1,95 @@
+---
+title: "6: Missing and weird data"
+date: 2026-02-03
+marp: true
+theme: marp-mru
+paginate: true
+headingDivider: 2
+layout: lecture
+toc: true
+code: "06_missing_weird"
+leftoff: []
+---
+
+<!-- 
+_class: title_slide
+_paginate: skip
+-->
+
+{{< katex />}}
+{{% ignore %}}
+
+## <!--fit-->DATA 3464: Fundamentals of Data Processing
+### <!--fit-->Missing and weird data
+
+Charlotte Curtis
+February 3, 2026
+
+{{% /ignore %}}
+
+## Topic overview
+- What to do with missing data
+- Detecting and handling outliers
+
+**Resources used:**
+- [Feature Engineering Chapter 8](http://www.feat.engineering/handling-missing-data)
+- Hands on Machine Learning with Scikit-Learn and Tensorflow/PyTorch, Chapter 2. Available at [MRU Library](https://ebookcentral.proquest.com/lib/mtroyal-ebooks/detail.action?docID=30168989)
+- [Scikit-learn user guide: Chapters 2 and 7](https://scikit-learn.org/stable/user_guide.html)
+
+## The problem
+- As you've seen, real-world data is messy
+- Missing values are common, other values don't make sense
+- We need to decide how to deal with these problems
+
+> What examples have we seen so far?
+> Why might data be missing or weird*?
+
+\*I'm using "weird" as an informal catch-all for unexpected or outlier values
+
+<!-- 
+- OKCupid dataset: negative values for income, placeholders in categories
+- Property assessments: very low property values
+- Traffic dataset: some streets have no speed limit
+ -->
+
+## Missing data
+
+<!-- _class: code_reminder -->
+
+When data are missing in the *features* we have a few options:
+
+0. Do nothing! Some algorithms (e.g. [Decisions Trees](https://scikit-learn.org/stable/modules/tree.html#tree-missing-value-support)) can handle missing values
+1. Remove *features* with missing values
+2. Remove *samples* with missing values
+3. Invent a new value to represent "missingness"
+4. **Impute** a value based on other data
+
+> We'll go back to the OKCupid dataset to decide how to handle missing data
+
+<!-- Reminder of rows vs columns -->
+
+## Option 1: removing features
+- If a feature has:
+    - A high proportion of missing values, *and*
+    - Little apparent relationship to the target *or*
+    - its information is redundant with other features
+- It is probably easiest just to remove it entirely. You can drop it, e.g.:
+    ```python
+    df.drop(columns=['feature_name'], inplace=True)
+    ```
+    or (probably more reliable) just not select it when building your pipeline
+
+## Option 2: removing samples
+- If only a small number of samples have missing values, you can drop them **from the training data**:
+    ```python
+    train.dropna(subset=[["features","we","care","about"]], inplace=True)
+    ```
+- Good idea if the same samples have missing values from multiple features
+- Still useful to explore *why* data are missing
+
+> What should we do for inference?
+
+## Option 3: invent a new value
+- Categorical features: add a new category for "missing"
+- Add a new binary feature indicating whether the value was missing
+- I have also seen advice to use extreme values for numerical features, like the -1 income in the OKCupid dataset
