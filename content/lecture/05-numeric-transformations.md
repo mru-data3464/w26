@@ -218,6 +218,38 @@ _paginate: skip -->
 - $X^*$ can be calculated as:
   $$X^* = XQ$$
 
+## Dimensionality reduction with PCA
+<!-- _class: code_reminder -->
+
+- Sort in order of decreasing eigenvalue ("amount of variance explained")
+- Keep only the first $k$ eigenvectors to form $Q_k$
+- Project data onto this smaller basis:
+  $$X^* = XQ_k$$
+- Implemented in Scikit-learn by passing `n_components` to `PCA()`, e.g.
+  ```python
+  pca = PCA(n_components=2) # just two axes
+  X_reduced = pca.fit_transform(X)
+  ```
+
+> Why might this be useful?
+
+<!-- 
+Visualization
+Too many features can be harmful for the model
+Data compression
+ -->
+
+## Linear discriminant analysis (LDA)
+- Similar to PCA, but **supervised**
+- Finds basis that maximize **class separability**
+- Still uses projections and eigenvalues, but adds some statistical magic
+- Key assumptions: 
+  - Features are normally distributed within a class
+  - Classes have identical covariance matrices
+- Implemented in Scikit-learn as [LinearDiscriminantAnalysis](https://scikit-learn.org/stable/modules/generated/sklearn.discriminant_analysis.LinearDiscriminantAnalysis.html)
+
+
+
 ## Summary
 - Numerical data often needs to be transformed to fit model assumptions
 - Standardizing (and maybe normalizing) are very common
@@ -228,4 +260,4 @@ _paginate: skip -->
 ## Coming up next
 - Assignment 1 - due Friday, ish (Monday is fine, and let me know if you need more than that)
 - Lab: practice with transformation pipelines
-- Next topics: Missing data and interaction effects
+- Next topic: Missing data, outliers, and interaction effects
