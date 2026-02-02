@@ -2,7 +2,6 @@
 title: "Lab 4: Numeric Data Transformations"
 weight: 1
 date: '2026-01-30T18:03:30-07:00'
-draft: true
 # bookFlatSection: false
 # bookToc: true
 # bookHidden: false
