@@ -64,7 +64,7 @@ When data are missing in the *features* we have a few options:
 3. Invent a new value to represent "missingness"
 4. **Impute** a value based on other data
 
-> We'll go back to the OKCupid dataset to decide how to handle missing data
+> Most important: understand *why* data are missing
 
 <!-- Reminder of rows vs columns -->
 
@@ -92,4 +92,6 @@ When data are missing in the *features* we have a few options:
 ## Option 3: invent a new value
 - Categorical features: add a new category for "missing"
 - Add a new binary feature indicating whether the value was missing
-- I have also seen advice to use extreme values for numerical features, like the -1 income in the OKCupid dataset
+- I have seen advice to use extreme values for numerical features, like the -1 income in the OKCupid dataset, but I'm not convinced this is a good idea
+
+> Case study: where missingness is informative
