@@ -95,3 +95,14 @@ When data are missing in the *features* we have a few options:
 - I have seen advice to use extreme values for numerical features, like the -1 income in the OKCupid dataset, but I'm not convinced this is a good idea
 
 > Case study: where missingness is informative
+
+## Option 4: impute missing values
+- Fill in the missing values with an "educated guess"
+- Simple approach: replace missing value with
+    - constant
+    - mean, median, or mode (`most_frequent`)
+- More complex: use other features to infer missing value
+    - K-nearest neighbours
+    - simple models to predict missing values
+- Can be combined with option 3 to [indicate missing features](https://scikit-learn.org/stable/modules/impute.html#marking-imputed-values)
+- How much to impute? [Feat.Engineering](http://www.feat.engineering/imputation-methods) suggests no more than 20%
