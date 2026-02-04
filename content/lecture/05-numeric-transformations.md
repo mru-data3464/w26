@@ -9,6 +9,7 @@ layout: lecture
 toc: true
 code: 05_numeric
 leftoff:
+  - 2026-02-03 end
   - 2026-01-29
   - 2026-01-27
 ---
@@ -260,22 +261,25 @@ _paginate: skip -->
 <div>
 
 ### Pros
-<!-- - Can improve model performance by:
+- Can improve model by:
   - removing noise
-  - reducing multicollinearity
-- Can reduce computational cost
-- Can help with visualization -->
+  - reducing collinearity
+- Lower complexity/compute cost
+- Can help with visualization
+- Can be informative about features
 
 </div>
 <div>
 
 ### Cons
-<!-- - Throwing out information
+- Throwing out information
 - Harder to interpret results
-- May not actually improve anything -->
+- May not actually improve anything
 
 </div>
 </div>
+
+> Higher list of pros, but still... don't do it unless it's demonstrably beneficial
 
 ## Summary
 - Numerical data often needs to be transformed to fit model assumptions

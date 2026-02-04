@@ -1,6 +1,6 @@
 ---
 title: "6: Missing and weird data"
-date: 2026-02-03
+date: 2026-02-05
 marp: true
 theme: marp-mru
 paginate: true
@@ -23,7 +23,7 @@ _paginate: skip
 ### <!--fit-->Missing and weird data
 
 Charlotte Curtis
-February 3, 2026
+February 5, 2026
 
 {{% /ignore %}}
 
@@ -64,7 +64,7 @@ When data are missing in the *features* we have a few options:
 3. Invent a new value to represent "missingness"
 4. **Impute** a value based on other data
 
-> Most important: understand *why* data are missing
+> Most important: understand *why* data are missing (more EDA!)
 
 <!-- Reminder of rows vs columns -->
 
@@ -94,14 +94,14 @@ When data are missing in the *features* we have a few options:
 - Add a new binary feature indicating whether the value was missing
 - I have seen advice to use extreme values for numerical features, like the -1 income in the OKCupid dataset, but I'm not convinced this is a good idea
 
-> Case study: where missingness is informative
+> [Case study](http://www.feat.engineering/encoding-missingness): where missingness is informative
 
 ## Option 4: impute missing values
 - Fill in the missing values with an "educated guess"
-- Simple approach: replace missing value with
+- Replace missing value with:
     - constant
     - mean, median, or mode (`most_frequent`)
-- More complex: use other features to infer missing value
+- Use other features to infer missing value:
     - K-nearest neighbours
     - simple models to predict missing values
 - Can be combined with option 3 to [indicate missing features](https://scikit-learn.org/stable/modules/impute.html#marking-imputed-values)
