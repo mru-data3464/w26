@@ -238,6 +238,7 @@ _paginate: skip -->
 ## Linear discriminant analysis (LDA)
 - Similar to PCA, but **supervised**
 - Finds basis that maximize **class separability**
+- Number of projection vectors must be `<= min(n_classes - 1, n_features)`
 - Still uses projections and eigenvalues, but adds some statistical magic
 - Key assumptions: 
   - Features are normally distributed within a class
