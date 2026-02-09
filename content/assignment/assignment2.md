@@ -84,7 +84,7 @@ Your working document can be messy, and should be well-commented to explain *why
 
 Whenever you make a change, **document your motivations and justifications** with a comment. Your goal is to find the set of features that balance model complexity with performance. To reach this point, it will likely be necessary to produce some intermediate attempts that are substantially worse than your baseline, and that's okay.
 
-How many iterations is up to you, but don't go too crazy - around 5 or so seems like a reasonable number for the vehicle emissions dataset, provided you are making informed and intentional changes.
+How many iterations is up to you, but don't go too crazy - around 5-10 seems like a reasonable number for the vehicle emissions dataset, provided you are making informed and intentional changes.
 
 ### Executive Summary
 In your 1-2 page summary document, include the following:
