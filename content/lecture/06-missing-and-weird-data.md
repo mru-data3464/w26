@@ -136,11 +136,17 @@ When data are missing in the *features* we have a few options:
 ![bg right fit](../../static/img/06-income-boxplot.png)
 
 ## What to do about outliers?
-- Data transformations
-- Drop the samples
-- Encode them somehow
-- Leave them alone
+1. Data transformations
+2. Drop the samples
+3. Encode them somehow
+4. Leave them alone
 
 As usual, very data- and model-dependent. Tree based methods are particularly impacted by outliers!
 
 > Any other ideas?
+
+## Outliers and data transformations
+![bg left fit](../../static/img/06-income-hist-log.png)
+
+- Transforming the data does not actually remove the outlier
+- Can help make the relationship less extreme
