@@ -73,7 +73,7 @@ Your working document can be messy, and should be well-commented to explain *why
 
 1. **Data Exploration**: You will need to do some more data exploration for this assignment, and in fact, you will find it is the first step of pretty much any data project. In general, follow the question/answer guidelines from assignment 1; however, you do not need to split the data, as I have already reserved a test set and am asking that you use cross-validation. The main goal of your data exploration is to examine the data and determine what processing might be needed by looking for potential missing or illogical values, nonlinear relationships, number of categories, etc.
 
-2. **Initial Pipeline**: After data exploration, build a first "educated guess" pipeline to preprocess the data and train an `SGDRegressor` with `penalty=None`. Then, use 5-fold `cross_val_score` to see how it did.
+2. **Initial Pipeline**: After data exploration, build a first "educated guess" pipeline to preprocess the data and train an `SGDRegressor` with `penalty=None`. Then, use 5-fold `cross_val_score` with `scoring=neg_root_mean_squared_error` to see how it did.
 
 3. **Iterate**: Your first attempt provides a sort of baseline from which you can try to improve. Consider:
     - Handling missing features or outliers
@@ -82,7 +82,10 @@ Your working document can be messy, and should be well-commented to explain *why
     - Checking for interaction effects and includes appropriate engineered features (if any)
     - Selecting only the features necessary to achieve good performance
 
-Whenever you make a change, **document your motivations and justifications** with a comment. Your goal is to find the set of features that balance model complexity with performance. To reach this point, it will likely be necessary to produce some intermediate attempts that are substantially worse than your baseline, and that's okay.
+Whenever you make a change, **document your motivations and justifications** and record the resulting cross_val_score. Your goal is to find the set of features that balance model complexity with performance. To reach this point, it will likely be necessary to produce some intermediate attempts that are substantially worse than your baseline, and that's okay.
+
+> [!TIP]
+> To document your iterations, it's probably easiest to track of your changes in a markdown cell or separate document. I recommend making a copy of your initial pipeline and then tweaking the copy so that it's easy to see where you started from.
 
 How many iterations is up to you, but don't go too crazy - around 5-10 seems like a reasonable number for the vehicle emissions dataset, provided you are making informed and intentional changes.
 
