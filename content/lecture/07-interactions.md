@@ -107,6 +107,32 @@ $$\hat{y} = w_0 + w_1x_1 + w_2 x_2 + w_3x_1x_2$$
 
 > As always, don't make feature selection decisions on test data! 
 
+## Overall Processing Order
+In general, the recommended order is:
+
+<div class="columns">
+<div>
+
+### Numeric Features
+
+1. Impute any missing features
+2. Compose interaction terms
+3. Transform if necessary
+4. Rescale
+
+</div>
+<div>
+
+### Categorical features
+
+1. Encode + Impute
+2. Compose interaction terms
+3. Rescale if necessary (e.g. high cardinality ordinal)
+
+</div>
+</div>
+
+
 ## Coming up next
 - Reading week!!
 - Midterm practice (both in lab and in class)
