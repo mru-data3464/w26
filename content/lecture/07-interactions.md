@@ -59,9 +59,7 @@ $$\hat{y} = w_0 + w_1x_1 + w_2 x_2 + w_3x_1x_2$$
 <footer>Note: common to use β or θ for the weights instead of w, especially in statistics</footer>
 
 ## Which interactions to include?
-
-> Start with domain knowledge!
-
+First, use your domain knowledge! Then consider [guiding principles](http://www.feat.engineering/interactions-guiding-principles):
 - **Hierarchy principle**: The higher the degree of interaction, the less likely the interaction will explain variation in the response
 - **Effect sparsity**: only a fraction of the possible interactions are responsible for variation in the response
 - **Heredity principle**: for interaction term $x_1x_2$ to be considered:
