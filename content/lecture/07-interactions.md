@@ -8,7 +8,8 @@ headingDivider: 2
 layout: lecture
 toc: true
 code: "07_interactions"
-leftoff: []
+leftoff:
+  - 2026-02-12 end
 ---
 
 <!-- 
