@@ -5,7 +5,7 @@ date: '2026-02-23'
 ---
 
 # {{< param "title" >}}
-Next week (Monday, March 6th) we'll be doing the lab component of the midterm, worth 5-10% of your final grade (whichever gives you a higher overall score with the written midterm at 15-20%). To test out the setup in a low stakes environment, this lab will be conducted in class with the following websites whitelisted:
+Next week (Monday, March 2th) we'll be doing the lab component of the midterm, worth 5-10% of your final grade (whichever gives you a higher overall score with the written midterm at 15-20%). To test out the setup in a low stakes environment, this lab will be conducted in class with the following websites whitelisted:
 
 - [Numpy](https://numpy.org/)
 - [Pandas](https://pandas.pydata.org/)
@@ -16,7 +16,7 @@ Next week (Monday, March 6th) we'll be doing the lab component of the midterm, w
 The usual lab computer environments will be available - VS Code, Jupyter Notebooks, Spyder, etc. There is currently an issue with Python's intellisense extension on VS Code (Pylance), but hopefully this will be resolved before the real thing. In the meantime, enjoy the challenge of writing code without autocomplete.
 
 ## The task
-> If you missed the exercise or just want to take another look, you can now download the [OKCupid dataset](/lab_exam/okcupid.csv) and [starter notebook](/lab_exam/rename_me.ipynb).
+> If you missed the exercise or just want to take another look, you can now download the [OKCupid dataset](/w26/lab_exam/okcupid.csv) and [starter notebook](/w26/lab_exam/rename_me.ipynb).
 
 For both this trial run and the real thing, I will provide you with a starting notebook and csv distributed ~~through the "I" drive (hopefully it is ready in time)~~ directly to your Desktop. It will be a **familiar dataset**.
 

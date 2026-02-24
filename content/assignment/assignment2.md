@@ -13,7 +13,7 @@ date: '2026-02-09'
 
 # {{< param "title" >}}
 
-Due February 24, 2026 (end of day). Reasonable requests for extensions will be granted. This is, awkwardly, only 2 days before the midterm. I will put a component of this assignment on the lab component of the midterm (March 9), so timely submissions will ensure I can give you feedback before then.
+Due February 24, 2026 (end of day). Reasonable requests for extensions will be granted. This is, awkwardly, only 2 days before the midterm. I will put a component of this assignment on the lab component of the midterm (March ~~9~~ 2), so timely submissions will ensure I can give you feedback before then.
 
 You may work in groups up to 3. Click [here](https://classroom.github.com/a/w7SFuWc_) to create your groups on GitHub Classroom and clone the starter repository, which should have a csv containing the data and the usual .gitignore file.
 
