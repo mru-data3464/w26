@@ -17,3 +17,6 @@ __pycache__/
 *.pyc
 *.pyo
 *.pyd
+
+# All the various demo text things
+demo_code/08_text/*.txt
