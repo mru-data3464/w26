@@ -76,6 +76,7 @@ March 5, 2026
 <footer><a href="https://xkcd.com/927/">https://xkcd.com/927/</a>
 
 ## Unicode to the rescue
+<!-- _class: code_reminder -->
 - In the 1980s things were already getting out of hand
 - The **Unicode consortium** published a standard in 1993 that assigned a **code point** to every character they could think of (297,334 as of Unicode 17.0)
 - Currently, the most common encoding is [UTF-8](https://en.wikipedia.org/wiki/UTF-8)
@@ -101,3 +102,40 @@ March 5, 2026
 - As data scientists, you will need to ingest data from various sources
 - You **will** encounter character encoding and/or line ending issues
 - You don't need to memorize all this, but recognizing that an issue exists will go a long ways towards fixing it
+
+> Example: misadventures with "smart" [quotes](https://en.wikipedia.org/wiki/Right_single_quotation_mark)
+
+## Portable document format
+- The [PDF specification](https://pdfa.org/resource/pdf-specification-archive/) was first published in 1993
+- PDFs are like a "digital paper" that can contain text, images, vector graphics, and more (like JavaScript, forms, and weirdly, 3D models)
+- We use them for all sorts of things because the **appearance** is consistent
+- They are absolutely terrible for pretty much everything else
+
+## Some useful PDF packages:
+- [pdfminer.six](https://github.com/pdfminer/pdfminer.six): extract text and metadata
+- [pdfplumber](https://github.com/jsvine/pdfplumber): built on pdfminer.six, layout aware text extraction
+- [pikepdf](https://github.com/pikepdf/pikepdf): low level PDF manipulation
+- [pymupdf](https://github.com/pymupdf/pymupdf): more low level PDF manipulation
+- and [many](https://github.com/py-pdf/pypdf) ([many](https://camelot-py.readthedocs.io/en/master/)) [more](https://poppler.freedesktop.org/)!
+
+> DATA 3463 covers more about PDFs, including OCR. The main focus in this class is on fixing the issues and dealing with edge case
+
+## Hypertext markup language
+- Much simpler than PDFs, but still not great for data exchange
+- [Markup languages](https://en.wikipedia.org/wiki/Markup_language) are structured text files that define how content *should* be displayed, but it's not always consistent
+- Most of the internet is UTF-8 encoded HTML
+- We can try to extract text with something like [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+    - Again, more on web scraping in DATA 3463
+
+## Back to text
+- Assuming we've got text from somewhere, we probably want to:
+    - Organize it into a structured format (csv, database, json)
+    - Identify specific features (postal codes, dates, names)
+- Need to deal with encoding issues, garbled sentences, mixed up tables, and all the other bizarre ways things go wrong
+- There is no magic flowchart for this! Lots of trying things, seeing what happens, dealing with a few edge cases at a time
+> One really useful tool is **regular expressions** :hammer:
+
+## Regular expressions<!--fit-->
+### The card game?
+
+<!-- _class: title_slide -->
