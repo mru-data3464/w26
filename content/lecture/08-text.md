@@ -8,7 +8,8 @@ headingDivider: 2
 layout: lecture
 toc: true
 code: 08_text
-leftoff: []
+leftoff:
+    - 2026-03-05
 ---
 
 <!-- 
@@ -104,6 +105,9 @@ March 5, 2026
 - You don't need to memorize all this, but recognizing that an issue exists will go a long ways towards fixing it
 
 > Example: misadventures with "smart" [quotes](https://en.wikipedia.org/wiki/Right_single_quotation_mark)
+
+## Where we left off on March 5
+<!-- _class: title_slide -->
 
 ## Portable document format
 - The [PDF specification](https://pdfa.org/resource/pdf-specification-archive/) was first published in 1993
