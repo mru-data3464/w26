@@ -13,6 +13,7 @@ h1 {
   
 h2 {
   font-size: 50px;
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 :is(h1, h2, h3, h4, h5, h6) {
@@ -36,6 +37,7 @@ section.title_slide h4,
 section.title_slide h5, 
 section.title_slide h6 {
   color: white;  
+  background-color: transparent;
 }
 
 section blockquote {

@@ -142,4 +142,27 @@ March 5, 2026
 ## Regular expressions<!--fit-->
 ### The card game?
 
+*Note: card groupings and colours are logical where possible, but sometimes just random*
+
 <!-- _class: title_slide -->
+
+## Basic characters
+![bg fit](../../static/img/regex_cards/01_literals.jpg)
+
+## "Word" characters
+![bg fit](../../static/img/regex_cards/02_words.jpg)
+
+## Whitespace
+![bg fit](../../static/img/regex_cards/03_whitespace.jpg)
+
+## Quantifiers
+![bg fit](../../static/img/regex_cards/04_quantifiers.jpg)
+
+## Brackets and braces
+![bg fit](../../static/img/regex_cards/05_brackets.jpg)
+
+## Range and boundary
+![bg fit](../../static/img/regex_cards/06_range_boundary.jpg)
+
+## Start (not) and end
+![bg fit](../../static/img/regex_cards/07_start_end.jpg)
