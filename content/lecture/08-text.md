@@ -166,3 +166,21 @@ March 5, 2026
 
 ## Start (not) and end
 ![bg fit](../../static/img/regex_cards/07_start_end.jpg)
+
+## Case study: Cloudflare outage
+In July 2019, a poorly formed regex in Cloudflare's firewall rules caused CPU usage to spike and websites to come crashing down worldwide. The [cause](https://blog.cloudflare.com/details-of-the-cloudflare-outage-on-july-2-2019/)? This regex:
+
+```
+(?:(?:\"|'|\]|\}|\\|\d|(?:nan|infinity|true|false|null|undefined|symbol|math)|\`|\-|\+)+[)]*;?((?:\s|-|~|!|{}|\|\||\+)*.*(?:.*=.*)))
+```
+
+- Regex engines perform **backtracking** to check for multiple match possibilities
+- This particular string led to **catastrophic backtracking**
+- Moral of the story: test carefully, both positive and negative
+
+> I like https://regex101.com/ for quickly testing regular expressions
+
+## Coming up next
+- Assignment 3: curate a dataset
+- A primer on data cards
+- Intro to signals and images
