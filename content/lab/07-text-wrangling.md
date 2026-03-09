@@ -28,7 +28,7 @@ To create a nice pretty plot, I downloaded the CSV from the CPP website and the 
 
 Following the `TODO` items in the starter notebook, load the CPP contribution data and CPI data and create the following plot:
 
-![](/img/07-cpp-inflation.png)
+![](/w26/img/07-cpp-inflation.png)
 
 Turns out my friend was right and the maximum contribution has gone up compared to inflation!
 
