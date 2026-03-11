@@ -171,6 +171,23 @@ March 5, 2026
 ## Where we left off on March 10
 <!-- _class: title_slide -->
 
+## Capturing groups
+- Seems weird that `(?:...)` is so verbose, why not just `(...)`?
+- Even more common than grouping is **capturing**: `(...)`
+- This lets us save part of the match for later
+
+    > Examples: 
+    > - extract the dollar amount from a $$ string
+    > - extract the area code from a phone number
+    > - extract the domain from an email address
+
+## Regex tools
+- [Regex101](https://regex101.com/) for quickly testing, debugging, and learning
+- [re module](https://docs.python.org/3/library/re.html) for using regexes in Python
+- [grep](https://www.gnu.org/software/grep/) for searching through files on the command line
+- [sed](https://www.gnu.org/software/sed/) for doing regex-based find and replace on the command line
+- Regex the card game for learning and fun?
+
 ## Case study: Cloudflare outage
 In July 2019, a poorly formed regex in Cloudflare's firewall rules caused CPU usage to spike and websites to come crashing down worldwide. The [cause](https://blog.cloudflare.com/details-of-the-cloudflare-outage-on-july-2-2019/)? This regex:
 
@@ -181,8 +198,6 @@ In July 2019, a poorly formed regex in Cloudflare's firewall rules caused CPU us
 - Regex engines perform **backtracking** to check for multiple match possibilities
 - This particular string led to **catastrophic backtracking**
 - Moral of the story: test carefully, both positive and negative
-
-> I like https://regex101.com/ for quickly testing regular expressions
 
 ## Coming up next
 - Assignment 3: curate a dataset
