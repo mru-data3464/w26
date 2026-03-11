@@ -29,7 +29,8 @@ This is an open-ended problem. You will:
 - Label the data
 - Create a [data card](https://arxiv.org/abs/2204.01075) describing your dataset
 
-> [!IMPORTANT] Please do not choose a data source that contains sensitive information, such as personal identifying information, proprietary data, or data subject to copyright. These datasets will contribute to an **open data repository** and will end up being used in further courses or projects.
+> [!IMPORTANT] 
+> Please do not choose a data source that contains sensitive information, such as personal identifying information, proprietary data, or data subject to copyright. These datasets will contribute to an **open data repository** and will end up being used in further courses or projects.
 
 ### An example of an image dataset
 
