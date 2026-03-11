@@ -9,6 +9,7 @@ layout: lecture
 toc: true
 code: 08_text
 leftoff:
+    - 2026-03-10 end
     - 2026-03-05
 ---
 
