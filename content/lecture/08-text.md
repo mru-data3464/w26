@@ -9,7 +9,7 @@ layout: lecture
 toc: true
 code: 08_text
 leftoff:
-    - 2026-03-10 end
+    - 2026-03-10
     - 2026-03-05
 ---
 
@@ -167,6 +167,9 @@ March 5, 2026
 
 ## Start (not) and end
 ![bg fit](../../static/img/regex_cards/07_start_end.jpg)
+
+## Where we left off on March 10
+<!-- _class: title_slide -->
 
 ## Case study: Cloudflare outage
 In July 2019, a poorly formed regex in Cloudflare's firewall rules caused CPU usage to spike and websites to come crashing down worldwide. The [cause](https://blog.cloudflare.com/details-of-the-cloudflare-outage-on-july-2-2019/)? This regex:
