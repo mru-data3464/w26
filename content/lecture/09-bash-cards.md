@@ -68,3 +68,64 @@ command_name --long_flag -l -o arg1 arg2
     - `grep` to search for text in files
     - `sed` to find and replace text in files
     - `curl` to fetch data from the web
+
+## Variables
+- Variables are defined with `=` and accessed with `$`
+- File arguments are passed as `$1`, `$2`, etc. in bash scripts
+
+  ```bash
+  name="Salvador"
+  echo "Hello, $name!"
+  ```
+- Quotes matter!
+  - Double quotes `"` allow **variable expansion**
+  - Single quotes `'` treat everything as literal
+  - Backticks `` ` `` execute a command and insert its output
+
+
+## Loops
+```bash
+for file in **/*.csv; do
+    echo "Processing $file"
+    # Do something with $file
+done
+```
+- `**/` means "look in all subdirectories"
+- `*.csv` is a **wildcard** that matches all files ending in `.csv`
+- Wildcard can also be used to match other patterns, e.g. `data_*.csv`
+- You can also loop over numbers, lists of literals, etc.
+
+## Pipes
+```bash
+cat data.csv | grep -o "\d{3}[-\s]?\d{3}-\s]?\d{4}" | wc -l
+```
+- The pipe `|` feeds the output from one command into the next
+- This example:
+    - `cat` outputs the contents of `data.csv`
+    - `grep` finds regex matches (for what?)
+    - `wc -l` counts the number of lines that match
+
+## Redirecting input and output
+- `>` sends output to a file, overwriting it
+- `>>` appends output to a file
+- `<` reads input from a file (less )
+
+  ```bash
+  echo "Hello, world!" > greeting.txt
+  echo "\nNext line" >> greeting.txt
+  some_program < saved_inputs.txt
+  ```
+
+> You might also see `2>`, which redirects error messages instead of output, or `&>` which redirects both
+
+## Data cards
+*Enough of bash for now, you'll practice more in the lab...*
+
+- [Data Cards](https://sites.research.google/datacardsplaybook/) are a structured way of documenting a dataset
+- Some version of data cards are used at [Kaggle](https://www.kaggle.com/datasets), [Hugging Face](https://huggingface.co/datasets), and probably anywhere else you can find data
+
+> Example: let's fill out a data card for the OKCupid data
+
+## Coming up next
+- Basics of signal and image processing
+- Labelling data for machine learning
