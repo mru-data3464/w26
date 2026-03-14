@@ -1,8 +1,7 @@
 ---
 title: "Lab 8: Bash and Regular Expressions"
 weight: 1
-date: '2026-03-16
-draft: true
+date: 2026-03-16
 # bookFlatSection: false
 # bookToc: true
 # bookHidden: false
