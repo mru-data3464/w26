@@ -24,16 +24,20 @@ Charlotte note: I've removed some fields that don't apply to your assignment, su
 
 ## Uses
 
+Learning about data analysis
 <!-- Address questions around how the dataset is intended to be used. -->
 
 ### Direct Use
-
+The dataset could be used for a number of supervised learning tasks, such as:
+- Predicting income from education
+- etc
 <!-- This section describes suitable use cases for the dataset. -->
 
 [More Information Needed]
 
 ### Out-of-Scope Use
-
+- Targeting specific individuals based on OKCupid profile
+- Not useful for finding a soulmate
 <!-- This section addresses misuse, malicious use, and uses that the dataset will not work well for. -->
 
 [More Information Needed]
