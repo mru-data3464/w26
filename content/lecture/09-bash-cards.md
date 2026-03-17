@@ -8,7 +8,8 @@ headingDivider: 2
 layout: lecture
 toc: true
 code: "09_bash_cards"
-leftoff: []
+leftoff:
+  - 2026-03-12
 ---
 
 <!-- 
@@ -117,6 +118,9 @@ cat data.csv | grep -o "\d{3}[-\s]?\d{3}-\s]?\d{4}" | wc -l
   ```
 
 > You might also see `2>`, which redirects error messages instead of output, or `&>` which redirects both
+
+## Where we left off on March 12
+<!-- _class: title_slide -->
 
 ## Data cards
 *Enough of bash for now, you'll practice more in the lab...*
