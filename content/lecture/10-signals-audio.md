@@ -1,5 +1,5 @@
 ---
-title: "10: Signals and images"
+title: "10: Signals and Audio"
 date: 2026-03-17
 marp: true
 theme: marp-mru
@@ -7,8 +7,9 @@ paginate: true
 headingDivider: 2
 layout: lecture
 toc: true
-code: "10_signals_images"
-leftoff: []
+code: "10_signals_audio"
+leftoff:
+- 2026-03-16
 ---
 
 <!-- 
@@ -20,7 +21,7 @@ _paginate: skip
 {{% ignore %}}
 
 ## <!--fit-->DATA 3464: Fundamentals of Data Processing
-### <!--fit-->Signals and images
+### <!--fit-->Signals and Audio
 
 Charlotte Curtis
 March 17, 2026
@@ -29,9 +30,9 @@ March 17, 2026
 
 ## Topic overview
 - Introduction to signals
-- Images as 2D signals
+- Audio as a 1D signal
 - File formats
-- Signal and image processing (for machine learning)
+- A brief intro to signal processing
 
 **Resources used:**
 - Various textbooks from my undergrad
@@ -63,6 +64,9 @@ March 17, 2026
 
 <footer>This is skipping over several entire math courses</footer>
 
+## Where we left off on March 17
+<!-- _class: title_slide -->
+
 ## Symmetry in the frequency domain
 <!-- _class: code_reminder -->
 - Since a real-valued signal in time is composed of both sine and cosine components, its DFT has **conjugate symmetry**
@@ -72,6 +76,10 @@ March 17, 2026
 - In practice, for real-valued data, we often only inspect:
   - **magnitude**: $|X[k]|$ to see "how much" of each frequency is present
   - **phase**: $\angle X[k]$ to see alignment/shift information
+
+## Frequency vs Time Domains
+![center](../../static/img/time_freq_pulse.png)
+- $f = \frac{1}{t} \implies$ short time = high frequency, small frequency = long time
 
 ## Example signal: Audio
 <!-- _class: code_reminder -->
@@ -83,3 +91,30 @@ March 17, 2026
     - 48 kHz sampling rate
     - mono (1 channel) or stereo (2 channels)
 > What about .mp3? .ogg? I would use [ffmpeg](https://www.ffmpeg.org/) to convert to .wav
+
+## Preparing data
+- Assuming we're starting with a collection of audio files, we can either:
+  - Extract features and save as tabular data
+  - Use the raw audio signal as input
+- We can preprocess and store the data, or preprocess on the fly
+
+> What considerations might go into this decision?
+> What should always be stored regardless of the approach?
+
+## Preparing audio data
+<!-- _class: code_reminder -->
+
+- Data for learning tasks is easiest to work with if it is **consistent**
+- For audio signals, this could include:
+    - Decompressing and converting to .wav
+    - Downsampling
+    - Aligning and cropping primary signal
+    - Converting to mono/stereo
+    - Extracting features
+- [librosa](https://librosa.org/doc/latest/index.html) can help with this (and can apparently handle mp3 too!)
+
+## Coming up next
+- 2D signals (aka images)
+- Strategies and software for labelling data
+
+> By next week you should have some idea of what kind of dataset you want to curate and label for Assignment 3
