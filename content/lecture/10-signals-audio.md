@@ -92,6 +92,15 @@ March 17, 2026
     - mono (1 channel) or stereo (2 channels)
 > What about .mp3? .ogg? I would use [ffmpeg](https://www.ffmpeg.org/) to convert to .wav
 
+## Preparing data
+- Assuming we're starting with a collection of audio files, we can either:
+  - Extract features and save as tabular data
+  - Use the raw audio signal as input
+- We can preprocess and store the data, or preprocess on the fly
+
+> What considerations might go into this decision?
+> What should always be stored regardless of the approach?
+
 ## Preparing audio data
 <!-- _class: code_reminder -->
 
@@ -100,8 +109,12 @@ March 17, 2026
     - Decompressing and converting to .wav
     - Downsampling
     - Aligning and cropping primary signal
-    - Converting to mono
+    - Converting to mono/stereo
     - Extracting features
 - [librosa](https://librosa.org/doc/latest/index.html) can help with this (and can apparently handle mp3 too!)
 
-## Preparing data
+## Coming up next
+- 2D signals (aka images)
+- Strategies and software for labelling data
+
+> By next week you should have some idea of what kind of dataset you want to curate and label for Assignment 3
