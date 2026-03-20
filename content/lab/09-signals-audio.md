@@ -2,7 +2,6 @@
 title: "Lab 9: 1D Signals and Audio"
 weight: 1
 date: '2026-03-23'
-draft: true
 # bookFlatSection: false
 # bookToc: true
 # bookHidden: false
@@ -63,10 +62,13 @@ ipd.Audio(sound, rate=sampling_rate)
 
 which will display a little "play" button in the notebook.
 
-Try doing the following:
+Here's some suggestions of things to try:
 
 1. Resample at various sampling rates, e.g. using `librosa.resample`. How does this affect both sounds? Pay particular attention to the frequency domain!
 
 2. One useful feature in audio signals is the **onset**, or when a sound starts. This is more useful for longer signals (like finding the beat in songs), but it could also be useful for aligning the start of a sound in a dataset. Try using [`librosa.onset.onset_detect`](https://librosa.org/doc/main/generated/librosa.onset.onset_detect.html) to find the time or sample for a "new note" in each signal. Do the results make sense to you?
 
-3. Try adding "noise" to your sounds.
+3. Try adding "noise" to your sounds, such as random numbers sampled from a normal distribution.
+
+## Submit
+As usual, commit and push what you've done so I can see your work and give feedback (and points!).
