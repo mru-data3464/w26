@@ -108,3 +108,33 @@ March 24, 2026
   - Non-criminals are RGB JPEGs from 5 different sources, converted to greyscale to be "compatible with mugshots from the criminal category"
 
 > What's the problem here?
+
+## Preparing images for machine learning
+- As with audio, images should be **consistent**
+- Let's check out some [public datasets](https://archive.ics.uci.edu/datasets?skip=0&take=10&sort=desc&orderBy=NumHits&search=&Types=Image)
+- Two approaches:
+  - keep raw data and process on the fly (e.g. ImageNet)
+  - apply some preprocessing and store (e.g. CIFAR-10)
+- Common to do a bit of both, e.g. resize and save with consistent format, then apply various transforms during both training and inference
+
+> As usual, there is a tradeoff between time and space
+
+## Types of Image Transformations
+<!-- _class: code_reminder -->
+
+- **Geometric transforms** resize, rotate, skew, shift, etc
+  - Most of these use some form of [interpolation](https://pillow.readthedocs.io/en/stable/handbook/concepts.html#concept-filters) (or resampling)
+- **Point operators** independently change each pixel, e.g. histogram equalization
+- **Linear filters** compute new pixel values from a weighted sum of values in a small neighbourhood
+- **Nonlinear filters** compute new pixel values from a small neighbourhood in a nonlinear fashion
+
+## Tools
+In addition to Pillow:
+- [ImageMagick](https://imagemagick.org) is a command-line tool that can be combined with bash scripting to process a bunch of images, e.g.:
+  ```bash
+  mkdir resized
+  for img in *.jpg; do
+     magick $img -resize 512x512! resized/$img
+  done
+  ```
+- [Torchvision](https://docs.pytorch.org/vision/main/transforms.html) provides load-time transformations for use with deep learning models
