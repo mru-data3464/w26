@@ -8,7 +8,8 @@ headingDivider: 2
 layout: lecture
 toc: true
 code: "11_images"
-leftoff: []
+leftoff:
+  - 2026-03-24
 ---
 
 <!-- 
@@ -95,6 +96,9 @@ March 24, 2026
   4. Amplitudes are [quantized](https://en.wikipedia.org/wiki/Quantization_(image_processing)) with larger buckets at higher frequencies
   5. Finally, lossless compression is applied
 - The "quality" of a JPEG relates the degree of quantization
+
+## Where we left off on March 24
+<!-- _class: title_slide -->
 
 ## A Cautionary Tale of Image Classification
 - As convolutional neural networks (CNNs) gained popularity as image recognition powerhouses, people started using them for all sorts of things
