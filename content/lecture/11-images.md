@@ -173,3 +173,9 @@ In addition to Pillow and the usual numpy, matplotlib, scipy libraries:
 - [OpenCV](https://opencv.org/) has functionality overlap with Pillow, but also computer vision algorithms
 - [Torchvision](https://docs.pytorch.org/vision/main/transforms.html) provides load-time transformations for use with deep learning models
 - [ITK](https://itk.org/) is the OG classical image processing toolbox focused on medical imaging
+
+## Coming up next
+- Image processing lab
+- Assignment 3 due next week
+  - Ask me for help!
+- Data augmentation and generation
