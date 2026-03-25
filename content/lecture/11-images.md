@@ -119,17 +119,50 @@ March 24, 2026
 
 > As usual, there is a tradeoff between time and space
 
-## Types of Image Transformations
-<!-- _class: code_reminder -->
+## Image Transformations
 
 - **Geometric transforms** resize, rotate, skew, shift, etc
-  - Most of these use some form of [interpolation](https://pillow.readthedocs.io/en/stable/handbook/concepts.html#concept-filters) (or resampling)
 - **Point operators** independently change each pixel, e.g. histogram equalization
 - **Linear filters** compute new pixel values from a weighted sum of values in a small neighbourhood
 - **Nonlinear filters** compute new pixel values from a small neighbourhood in a nonlinear fashion
 
+## Resizing
+<!-- _class: code_reminder -->
+- For computer vision purposes, most images need to be resized
+- Most often, a **square aspect ratio** is used
+  - Can be rotated 90 degrees without modifying code
+  - Simplifies parameter specification
+  - Maybe some CUDA advantage if divisible by 8 (e.g. $224 \times 224$)
+- Resizing needs [interpolation](https://pillow.readthedocs.io/en/stable/handbook/concepts.html#concept-filters) (or resampling), and distorts aspect ratio
+- Alternatively (or additionally), image **crops** can be used
+
+
+## Linear Filters: Convolution
+<!-- _class: code_reminder -->
+
+<div class="columns">
+
+- A filter or convolution **kernel** is a small (usually) square matrix that gets **convolved** with the image:
+  $$(f * g)[n, m] = \sum_{i=0}^{n}\sum_{j=0}^{m} f[i, j]g[n-i, m-j]$$
+
+- Fun fact: this is the same as multiplication in frequency
+
+![center](https://upload.wikimedia.org/wikipedia/commons/1/19/2D_Convolution_Animation.gif)
+
+</div>
+
+<footer>By Michael Plotke - Own work, CC BY-SA 3.0, <a href="https://commons.wikimedia.org/w/index.php?curid=24288958">From Wikipedia</a></footer>
+
+## Beyond linear filters
+- Linear filters are simple weighted summations, and form the core of **convolutional neural networks**, widely used in computer vision
+- Sometimes, nonlinear effects are useful, such as:
+  - Median image filtering to reduce certain types of noise
+  - Morphological operators for binary image masks
+
+> There is a huge world of image processing, including techniques for segmentation, feature detection, registration... too much to cover in this course!
+
 ## Tools
-In addition to Pillow:
+In addition to Pillow and the usual numpy, matplotlib, scipy libraries:
 - [ImageMagick](https://imagemagick.org) is a command-line tool that can be combined with bash scripting to process a bunch of images, e.g.:
   ```bash
   mkdir resized
@@ -137,4 +170,6 @@ In addition to Pillow:
      magick $img -resize 512x512! resized/$img
   done
   ```
+- [OpenCV](https://opencv.org/) has functionality overlap with Pillow, but also computer vision algorithms
 - [Torchvision](https://docs.pytorch.org/vision/main/transforms.html) provides load-time transformations for use with deep learning models
+- [ITK](https://itk.org/) is the OG classical image processing toolbox focused on medical imaging
