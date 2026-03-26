@@ -8,7 +8,8 @@ headingDivider: 2
 layout: lecture
 toc: true
 code: "11_images"
-leftoff: []
+leftoff:
+  - 2026-03-24
 ---
 
 <!-- 
@@ -96,6 +97,9 @@ March 24, 2026
   5. Finally, lossless compression is applied
 - The "quality" of a JPEG relates the degree of quantization
 
+## Where we left off on March 24
+<!-- _class: title_slide -->
+
 ## A Cautionary Tale of Image Classification
 - As convolutional neural networks (CNNs) gained popularity as image recognition powerhouses, people started using them for all sorts of things
 - One example: predicting whether someone is a criminal based on a photo
@@ -104,3 +108,74 @@ March 24, 2026
   - Non-criminals are RGB JPEGs from 5 different sources, converted to greyscale to be "compatible with mugshots from the criminal category"
 
 > What's the problem here?
+
+## Preparing images for machine learning
+- As with audio, images should be **consistent**
+- Let's check out some [public datasets](https://archive.ics.uci.edu/datasets?skip=0&take=10&sort=desc&orderBy=NumHits&search=&Types=Image)
+- Two approaches:
+  - keep raw data and process on the fly (e.g. ImageNet)
+  - apply some preprocessing and store (e.g. CIFAR-10)
+- Common to do a bit of both, e.g. resize and save with consistent format, then apply various transforms during both training and inference
+
+> As usual, there is a tradeoff between time and space
+
+## Image Transformations
+
+- **Geometric transforms** resize, rotate, skew, shift, etc
+- **Point operators** independently change each pixel, e.g. histogram equalization
+- **Linear filters** compute new pixel values from a weighted sum of values in a small neighbourhood
+- **Nonlinear filters** compute new pixel values from a small neighbourhood in a nonlinear fashion
+
+## Resizing
+<!-- _class: code_reminder -->
+- For computer vision purposes, most images need to be resized
+- Most often, a **square aspect ratio** is used
+  - Can be rotated 90 degrees without modifying code
+  - Simplifies parameter specification
+  - Maybe some CUDA advantage if divisible by 8 (e.g. $224 \times 224$)
+- Resizing needs [interpolation](https://pillow.readthedocs.io/en/stable/handbook/concepts.html#concept-filters) (or resampling), and distorts aspect ratio
+- Alternatively (or additionally), image **crops** can be used
+
+
+## Linear Filters: Convolution
+<!-- _class: code_reminder -->
+
+<div class="columns">
+
+- A filter or convolution **kernel** is a small (usually) square matrix that gets **convolved** with the image:
+  $$(f * g)[n, m] = \sum_{i=0}^{n}\sum_{j=0}^{m} f[i, j]g[n-i, m-j]$$
+
+- Fun fact: this is the same as multiplication in frequency
+
+![center](https://upload.wikimedia.org/wikipedia/commons/1/19/2D_Convolution_Animation.gif)
+
+</div>
+
+<footer>By Michael Plotke - Own work, CC BY-SA 3.0, <a href="https://commons.wikimedia.org/w/index.php?curid=24288958">From Wikipedia</a></footer>
+
+## Beyond linear filters
+- Linear filters are simple weighted summations, and form the core of **convolutional neural networks**, widely used in computer vision
+- Sometimes, nonlinear effects are useful, such as:
+  - Median image filtering to reduce certain types of noise
+  - Morphological operators for binary image masks
+
+> There is a huge world of image processing, including techniques for segmentation, feature detection, registration... too much to cover in this course!
+
+## Tools
+In addition to Pillow and the usual numpy, matplotlib, scipy libraries:
+- [ImageMagick](https://imagemagick.org) is a command-line tool that can be combined with bash scripting to process a bunch of images, e.g.:
+  ```bash
+  mkdir resized
+  for img in *.jpg; do
+     magick $img -resize 512x512! resized/$img
+  done
+  ```
+- [OpenCV](https://opencv.org/) has functionality overlap with Pillow, but also computer vision algorithms
+- [Torchvision](https://docs.pytorch.org/vision/main/transforms.html) provides load-time transformations for use with deep learning models
+- [ITK](https://itk.org/) is the OG classical image processing toolbox focused on medical imaging
+
+## Coming up next
+- Image processing lab
+- Assignment 3 due next week
+  - Ask me for help!
+- Data augmentation and generation
