@@ -9,6 +9,7 @@ layout: lecture
 toc: true
 code: "11_images"
 leftoff:
+  - 2026-03-26
   - 2026-03-24
 ---
 
@@ -136,6 +137,8 @@ March 24, 2026
 - Resizing needs [interpolation](https://pillow.readthedocs.io/en/stable/handbook/concepts.html#concept-filters) (or resampling), and distorts aspect ratio
 - Alternatively (or additionally), image **crops** can be used
 
+## Where we left off on March 26
+<!-- _class: title_slide -->
 
 ## Linear Filters: Convolution
 <!-- _class: code_reminder -->
