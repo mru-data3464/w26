@@ -178,18 +178,18 @@ In addition to Pillow and the usual numpy, matplotlib, scipy libraries:
 - [ITK](https://itk.org/) is the OG classical image processing toolbox focused on medical imaging
 
 ## What about videos?
+<!-- _class: code_reminder -->
+
 - There are an [absurd number](https://en.wikipedia.org/wiki/Comparison_of_video_container_formats) of video formats
 - Most common: [MPEG4 container](https://en.wikipedia.org/wiki/MP4_file_format), [H.264 video](https://en.wikipedia.org/wiki/Advanced_Video_Coding), [AAC audio](https://en.wikipedia.org/wiki/Advanced_Audio_Coding)
 - Containers can hold video, audio, subtitles, chapter information, etc
 - Often video-only data is treated as a series of images (e.g. [Kinetics](https://arxiv.org/pdf/1705.06950))
 - New considerations:
   - Temporal (re)sampling
-  - Dataset splitting
-
-## Splitting time series data
+  - Dataset splitting!!
 
 ## Coming up next
 - Image processing lab
-- Assignment 3 due next week
+- Assignment 3 due soon
   - Ask me for help!
 - Data augmentation and generation
