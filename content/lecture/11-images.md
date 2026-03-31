@@ -9,6 +9,7 @@ layout: lecture
 toc: true
 code: "11_images"
 leftoff:
+  - 2026-03-31 end
   - 2026-03-26
   - 2026-03-24
 ---
