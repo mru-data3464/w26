@@ -1,5 +1,12 @@
 {
     "markdown.marp.themes": [
         "assets/marp-mru.css"
+    ],
+    "cSpell.languageSettings": [],
+    "xml.fileAssociations": [
+        {
+            "pattern": "**/source/**.ptx",
+            "systemId": "c:\\Users\\ccurtis\\.vscode\\extensions\\oscarlevin.pretext-tools-0.35.2\\assets\\schema\\pretext.rng"
+        }
     ]
 }

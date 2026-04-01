@@ -43,7 +43,11 @@ April 2, 2026
 <footer>Image from https://manipulation.csail.mit.edu/segmentation.html</footer>
 
 ## How are annotations stored?
+<!-- _class: code_reminder -->
+
 Usually in plain text!
 - Classification: subdirectories, csv files
-- Bounding boxes: YOLO or COCO formats
-- Panoptic: [COCO + PNG](https://cocodataset.org/#format-data)
+- Bounding boxes: text files, e.g. COCO, VOC
+- "Panoptic": Text and/or PNG, e.g. [COCO](https://cocodataset.org/#format-data)
+
+> Examples downloaded from https://www.robots.ox.ac.uk/~vgg/data/pets/
