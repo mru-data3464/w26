@@ -7,8 +7,9 @@ paginate: true
 headingDivider: 2
 layout: lecture
 toc: true
-code: ""
-leftoff: []
+code: 12_annotate_augment
+leftoff: 
+  - 2026-04-02 end
 ---
 
 <!-- 
